@@ -23,7 +23,7 @@ sqlContext = SQLContext(sc)
 
 #Read in data from datafile and register as temporary SQL table
 #
-tableName = "RandDataTable"
+tableName = "StudentTable"
 
 print "Reading Table"
 data = sqlContext.read.json(dataFile)
