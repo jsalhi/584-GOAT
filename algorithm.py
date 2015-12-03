@@ -23,7 +23,7 @@ data.registerTempTable(tableName)
 # value: simplified version of query (eg. "SELECT cols FROM ..." only)
 complex_to_simple_map = {} # my understanding is this is going to be hard coded
 # key: complex query input (eg. "SELECT AVG(colx) FROM .... WHERE ...")
-# value: an ordered list of RDD ops that query needs 
+# value: an ordered list of RDD ops that query needs
 #       ordering = list[0] done before list[1] and so on
 complex_to_rdd_ops = {} # will this be hard coded? I think so
 # key: simple query
@@ -31,8 +31,8 @@ complex_to_rdd_ops = {} # will this be hard coded? I think so
 apriori_simple_to_simple_map = {} # this will be populated by apriori script
 # key: rdd pointer (is this possible?)
 # value: set of columns that rdd can handle
-# need to be sure to remove entry when RDD is evicted. 
-rdd_to_rows_map = {} # this will be managed in code when new RDD is loaded
+# need to be sure to remove entry when RDD is evicted.
+rdd_to_cols_map = {} # this will be managed in code when new RDD is loaded
 # key: simple query we wanted
 # value: simple query that accounts for apriori associations
 simple_to_simple_with_apriori_map = {} # this will be managed in preprocessing code
@@ -50,8 +50,8 @@ def pre_processing():
     complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CSE'"] = [('filter', "Major = 'CSE'"), ('AVG', "GPA")]
     complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CS'"] = [('filter', "Major = 'CS'"), ('AVG', "GPA")]
     apriori_simple_to_simple_map["SELECT GPA, Major FROM StudentTable"] = ["SELECT GPA, Major, Company FROM StudentTable"]
-    rdd_to_rows_map['a'] = set(['GPA', 'Major', 'Company'])
-    rdd_to_rows_map['b'] = set(['GPA', 'Major'])
+    rdd_to_cols_map['a'] = set(['GPA', 'Major', 'Company'])
+    rdd_to_cols_map['b'] = set(['GPA', 'Major'])
     # preprocess the simple_to_simple_with_apriori_map
     for key, value in apriori_simple_to_simple_map.iteritems():
         print key
@@ -62,8 +62,8 @@ def pre_processing():
     print simple_to_simple_with_apriori_map
 
 # Purpose: A proprietary framework to back propogate associated apriori
-#           values to efficiently optimize a query workload using a 
-#           distributed and cloud based platform. 
+#           values to efficiently optimize a query workload using a
+#           distributed and cloud based platform.
 #           Implementation 1.0 ignores subdifferentials
 # Input: nothing
 # Returns: everything
@@ -88,7 +88,7 @@ def proprietary_algo():
         # iterate through RDDs in memory and see if any of them can support
         # the columns that are needed for this query
         rdd = "N/A"
-        for key, value in rdd_to_rows_map.iteritems():
+        for key, value in rdd_to_cols_map.iteritems():
             # is columns needed a subset of the columns the RDD supports
             if columns_needed.issubset(value):
                 rdd = key
@@ -114,7 +114,7 @@ def proprietary_algo():
             # do the op
             print "rdd_op"
 
-# Purpose: extract all the columns needed for a certain query 
+# Purpose: extract all the columns needed for a certain query
 # Input: a simplified version of a query that contains only "SELECT cols FROM x"
 # Returns: a set of all the columns that query is trying to access
 def extract_columns_from_query(query):
