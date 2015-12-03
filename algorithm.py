@@ -6,7 +6,7 @@ import sys
 
 #Resource path + datafile
 sparkResPath = "/Users/Alex/Desktop/spark-1.5.1/examples/src/main/resources/"
-dataFile = sparkResPath + "StudentTable-10.json"
+dataFile = sparkResPath + "StudentTable-1000.json"
 
 #Necessary garbage for setting up spark contexts
 sc = SparkContext("local", "Cache Time Benchmark Evaluation")
@@ -32,7 +32,7 @@ apriori_simple_to_simple_map = {} # this will be populated by apriori script
 # key: rdd pointer (is this possible?)
 # value: set of columns that rdd can handle
 # need to be sure to remove entry when RDD is evicted. 
-rdd_to_rows_map = {} # this will be managed in code when new RDD is loaded
+rdd_to_cols_map = {} # this will be managed in code when new RDD is loaded
 # key: simple query we wanted
 # value: simple query that accounts for apriori associations
 simple_to_simple_with_apriori_map = {} # this will be managed in preprocessing code
@@ -47,19 +47,16 @@ def pre_processing():
     # next 7 hard coded lines are just to test to make sure algorithm works as should
     complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CSE'"] = "SELECT GPA, Major FROM StudentTable"
     complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CS'"] = "SELECT GPA, Major FROM StudentTable"
-    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CSE'"] = [('filter', "Major = 'CSE'"), ('AVG', "GPA")]
-    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CS'"] = [('filter', "Major = 'CS'"), ('AVG', "GPA")]
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CSE'"] = [('Filter', 'Major', "==", 'CSE'), ('AVG', 'GPA')]
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CS'"] = [('Filter', 'Major', "==", 'CS'), ('AVG', 'GPA')]
     apriori_simple_to_simple_map["SELECT GPA, Major FROM StudentTable"] = ["SELECT GPA, Major, Company FROM StudentTable"]
-    rdd_to_rows_map['a'] = set(['GPA', 'Major', 'Company'])
-    rdd_to_rows_map['b'] = set(['GPA', 'Major'])
+#    rdd_to_cols_map['a'] = set(['GPA', 'Major', 'Company'])
+#    rdd_to_cols_map['b'] = set(['GPA', 'Major'])
     # preprocess the simple_to_simple_with_apriori_map
     for key, value in apriori_simple_to_simple_map.iteritems():
-        print key
-        print value
         built_query = build_query_for_rdd(key)
         simple_to_simple_with_apriori_map[key] = built_query
     print "pre-processed"
-    print simple_to_simple_with_apriori_map
 
 # Purpose: A proprietary framework to back propogate associated apriori
 #           values to efficiently optimize a query workload using a 
@@ -84,16 +81,14 @@ def proprietary_algo():
             sys.exit()
         # Check if there is already an RDD in memory that can address query
         columns_needed = extract_columns_from_query(simple_query)
-        print columns_needed
         # iterate through RDDs in memory and see if any of them can support
         # the columns that are needed for this query
         rdd = "N/A"
-        for key, value in rdd_to_rows_map.iteritems():
+        for key, value in rdd_to_cols_map.iteritems():
             # is columns needed a subset of the columns the RDD supports
             if columns_needed.issubset(value):
                 rdd = key
                 break
-        print "RDD that can handle query: ", rdd
         # no RDD in memory can handle query, so we need to load in new one
         if rdd == "N/A":
             print "getting new rdd"
@@ -102,17 +97,14 @@ def proprietary_algo():
             rdd = sqlContext.sql(rdd_query)
             rdd = rdd.persist(StorageLevel.MEMORY_ONLY)
             # put new RDD in proper map
-
+            rdd_to_cols_map[rdd] = extract_columns_from_query(rdd_query)
             # remove any evicted RDD's from proper map
 
         # do RDD ops needed
         if query not in complex_to_rdd_ops:
             print "Tried to get rdd_ops for invalid complex query: ", query
             sys.exit()
-        rdd_ops = complex_to_rdd_ops[query]
-        for op in rdd_ops:
-            # do the op
-            print "rdd_op"
+        do_query_rdd_ops(rdd, query)
 
 # Purpose: extract all the columns needed for a certain query 
 # Input: a simplified version of a query that contains only "SELECT cols FROM x"
@@ -127,6 +119,8 @@ def extract_columns_from_query(query):
         if words[i] == "FROM":
             return columns
         columns.add(words[i])
+    print "There was no FROM in query: ", query
+    return columns
 
 # Purpose: Build a simple query that will be used to get an RDD
 #           This query will account for any apriori associations found
@@ -154,6 +148,42 @@ def build_query_for_rdd(query):
     query_str = query_str[:-2]
     query_str = query_str + " FROM " + tableName
     return query_str
+
+# Purpose: Do RDD ops needed to answer the query that is given
+# Input: the RDD we are operating on, and the complex query we are answering
+# Returns: nothing
+def do_query_rdd_ops(rdd, query):
+    print "Doing RDD ops for query: ", query
+    answer_rdd = rdd
+    rdd_ops = complex_to_rdd_ops[query]
+    for op in rdd_ops:
+        # Find out what the op is and do it
+        print "rdd_op"
+        if op[0] == "Filter":
+            print "Filter found"
+            # op[1] = column
+            # op[2] = filter styles: ==, <, <=, !=, >, >=
+            # op[3] = value
+            if op[2] == "==":
+                answer_rdd = answer_rdd.filter(answer_rdd[op[1]] == op[3])
+            elif op[2] == "!=":
+                answer_rdd = answer_rdd.filter(answer_rdd[op[1]] != op[3])
+            elif op[2] == "<":
+                answer_rdd = answer_rdd.filter(answer_rdd[op[1]] < op[3])
+            elif op[2] == "<=":
+                answer_rdd = answer_rdd.filter(answer_rdd[op[1]] <= op[3])
+            elif op[2] == ">":
+                answer_rdd = answer_rdd.filter(answer_rdd[op[1]] > op[3])
+            elif op[2] == ">=":
+                answer_rdd = answer_rdd.filter(answer_rdd[op[1]] >= op[3])
+#            print answer_rdd.take(10)
+        elif op[0] == "AVG":
+            print "AVG found"
+            answer_rdd.groupBy().avg(op[1])
+            print answer_rdd.groupBy().avg(op[1]).show()
+        elif op[0] == "COUNT":
+            print "COUNT found"
+            answer_rdd.count()
 
 if __name__ == "__main__":
     pre_processing()
