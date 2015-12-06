@@ -1,18 +1,10 @@
-SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CSE'
-SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CS'
-SELECT AVG(GPA) FROM StudentTable WHERE Major = 'EE'
-SELECT MAX(Salary) FROM StudentTable
-SELECT MIN(Salary) FROM StudentTable
-SELECT AVG(Salary) FROM StudentTable
-SELECT AVG(Salary) FROM StudentTable WHERE Major = 'CSE'
-SELECT AVG(Salary) FROM StudentTable WHERE Major = 'CSE' AND GPA > 3.5
-SELECT AVG(Salary) FROM StudentTable WHERE Company = 'Twitter'
-SELECT AVG(Salary) FROM StudentTable WHERE Company = 'Microsoft'
-SELECT AVG(GPA), AVG(Salary) FROM StudentTable WHERE FirstName = 'Alex' AND LastName = 'Lancaster'
-SELECT AVG(Salary) FROM StudentTable WHERE FavoriteClass = 'EECS584'
-SELECT AVG(GPA) FROM StudentTable WHERE TuitionType = 'In State'
-SELECT AVG(GPA) FROM StudentTable WHERE TuitionType = 'Out Of State'
-SELECT AVG(GPA) FROM StudentTable WHERE TuitionType = 'International'
-SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar'
-SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994
-SELECT AVG(GPA) FROM StudentTable WHERE BirthDay = 18
+SELECT AVG(GPA) FROM StudentTable GROUP BY Major
+SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE'
+SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE' AND GPA > 3.5
+SELECT MAX(StartingSalary) FROM StudentTable WHERE Major = 'CSE'
+SELECT FirstName, LastName, Company FROM StudentTable WHERE Major = 'CSE' AND StartingSalary = 130000
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'March' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth

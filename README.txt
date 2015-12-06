@@ -1,15 +1,14 @@
 TODO:
 Alex:
--Test if groupby with RDD works 
--Write a set of all potential queries (around 20 or 30)
--Write ~5 files of example query workloads from a unique user
-    Eg. User1 ran these 5 queries in this order, 
-        User2 ran these 7 in this order, etc
 -Hard code everything that is needed for queries
 -Add something to handle if RDD is in memory or not
 
 Jaleel:
 -Add something to handle if RDD is in memory or not
+-Write ~5 files of example query workloads from a unique user
+    Eg. User1 ran these 10 queries in this order, 
+        User2 ran these 7 in this order, etc
+-Write testing workload that we will evaluate performance on
 
 
 File Locations: 

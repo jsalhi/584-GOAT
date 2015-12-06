@@ -44,10 +44,12 @@ simple_to_simple_with_apriori_map = {} # this will be managed in preprocessing c
 # Returns: nothing
 def pre_processing():
     # next 7 hard coded lines are just to test to make sure algorithm works as should
+    complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable GROUP BY Major"] = "SELECT GPA, Major FROM StudentTable"
     complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CSE'"] = "SELECT GPA, Major FROM StudentTable"
     complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CS'"] = "SELECT GPA, Major FROM StudentTable"
-    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CSE'"] = [('Filter', 'Major', "==", 'CSE'), ('AVG', 'GPA')]
-    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CS'"] = [('Filter', 'Major', "==", 'CS'), ('AVG', 'GPA')]
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable GROUP BY Major"] = [('Group', 'Major'), ('AVG', 'GPA')]
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CSE'"] = [('Filter', 'Major', "==", 'CSE'), ('Group', 'N/A'), ('AVG', 'GPA')]
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CS'"] = [('Filter', 'Major', "==", 'CS'), ('Group', 'N/A'), ('AVG', 'GPA')]
     apriori_simple_to_simple_map["SELECT GPA, Major FROM StudentTable"] = ["SELECT GPA, Major, Company FROM StudentTable"]
 #    rdd_to_cols_map['a'] = set(['GPA', 'Major', 'Company'])
 #    rdd_to_cols_map['b'] = set(['GPA', 'Major'])
@@ -185,11 +187,17 @@ def do_query_rdd_ops(rdd, query):
 #            print answer_rdd.take(10)
         elif op[0] == "AVG":
             print "AVG found"
-            answer_rdd.groupBy().avg(op[1])
-            print answer_rdd.groupBy().avg(op[1]).show()
+            answer_rdd.avg(op[1])
+            print answer_rdd.avg(op[1]).show()
         elif op[0] == "COUNT":
             print "COUNT found"
             answer_rdd.count()
+        elif op[0] == "Group":
+            print "Group by found"
+            if op[1] == 'N/A':
+                answer_rdd = answer_rdd.groupBy()
+            else:
+                answer_rdd = answer_rdd.groupBy(op[1])
 
 if __name__ == "__main__":
     pre_processing()
