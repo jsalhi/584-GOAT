@@ -5,12 +5,11 @@ Alex:
 -Write ~5 files of example query workloads from a unique user
     Eg. User1 ran these 5 queries in this order, 
         User2 ran these 7 in this order, etc
--Add something to handle if RDD is in memory or not
 -Hard code everything that is needed for queries
+-Add something to handle if RDD is in memory or not
 
 Jaleel:
--Write a function that takes in a list of files of queries 
-and trains apriori on that
+-Add something to handle if RDD is in memory or not
 
 
 File Locations: 
