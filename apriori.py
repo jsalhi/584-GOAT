@@ -104,13 +104,37 @@ def print_results(supportedItems, associationRules):
         pre, post = rule
         print "Rule: %s ==> %s , %.3f" % (str(pre), str(post), confidence)
 
-
+#Returns a generator that outputs a frozenset() representing each transaction
+#
 def get_transaction_generator(fname):
         f = open(fname, 'rU')
         for line in f:
             line = line.strip().rstrip(',')                         # Remove trailing comma
             transaction = frozenset(line.split(','))
             yield transaction
+
+#Returns a generator that outputs a frozenset() representing each transaction
+#
+#files = list of files to read in from to generate transactions
+#
+def get_transaction_gen_from_files(filenames, window_size):
+    for filename in filenames:
+        nLines = 0
+        curTransaction = []
+        with open(filename, 'rU') as f:
+            for line in f:
+                line = line.strip().rstrip(',')
+                curTransaction.append(line)
+
+                nLines += 1
+                if nLines >= window_size:
+                    yield frozenset(curTransaction)
+                    _ = curTransaction.pop(0)
+
+        while len(curTransaction) >= 2:
+            yield frozenset(curTransaction)
+            _ = curTransaction.pop(0)
+
 
 def parse_options():
     optparser = OptionParser()
