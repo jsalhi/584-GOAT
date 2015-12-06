@@ -112,7 +112,7 @@ def get_transaction_generator(fname):
             transaction = frozenset(line.split(','))
             yield transaction
 
-def parseOptions():
+def parse_options():
     optparser = OptionParser()
     optparser.add_option('-f', '--inputFile',
                          dest='input',
@@ -131,7 +131,7 @@ def parseOptions():
     return optparser.parse_args()
 
 if __name__ == "__main__":
-    (options, args) = parseOptions()    
+    (options, args) = parse_options()    
     infileGen = None
     if options.input is not None:
         infileGen = get_transaction_generator(options.input)
