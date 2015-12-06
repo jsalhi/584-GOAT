@@ -16,7 +16,7 @@ and trains apriori on that
 File Locations: 
 (Eg. file_in_git_repo -> path_to_spark_location)
 -algorithm.py -> /spark-1.5.1/EECS584/algorithm.py
--apriori.py -> ???????
+-apriori.py -> /spark-1.5.1/EECS584/apriori.py
 -cacheBenchmark.py -> /spark-1.5.1/EECS584/cacheBenchmark.py
 -GenRandStudentTable.py -> /spark-1.5.1/examples/src/main/resources/GenRandStudentTable.py
 -InputFile.txt -> /spark-1.5.1/EECS584/InputFile.txt

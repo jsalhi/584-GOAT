@@ -87,13 +87,16 @@ def proprietary_algo():
             # is columns needed a subset of the columns the RDD supports
             # and is this RDD still in memory
             if columns_needed.issubset(value): 
-                storage_level = key.getStorageLevel
-                if storage_level == (False, True, False, True):
+                print key
+                storage_level = key.rdd.getStorageLevel()
+                if storage_level == StorageLevel.MEMORY_ONLY:
                     print "found RDD in memory"
-                    rdd = key
-                    break
+#                    rdd = key
+#                    break
                 else:
-                    print "found RDD that was evicted"
+                    print "FOUND RDD THAT WAS EVICTED"
+                rdd = key
+                break
         # no RDD in memory can handle query, so we need to load in new one
         if rdd == "N/A":
             print "getting new rdd"
