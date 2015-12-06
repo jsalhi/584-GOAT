@@ -31,7 +31,6 @@ complex_to_rdd_ops = {} # will this be hard coded? I think so
 apriori_simple_to_simple_map = {} # this will be populated by apriori script
 # key: rdd pointer (is this possible?)
 # value: set of columns that rdd can handle
-# need to be sure to remove entry when RDD is evicted.
 rdd_to_cols_map = {} # this will be managed in code when new RDD is loaded
 # key: simple query we wanted
 # value: simple query that accounts for apriori associations
@@ -86,9 +85,15 @@ def proprietary_algo():
         rdd = "N/A"
         for key, value in rdd_to_cols_map.iteritems():
             # is columns needed a subset of the columns the RDD supports
-            if columns_needed.issubset(value):
-                rdd = key
-                break
+            # and is this RDD still in memory
+            if columns_needed.issubset(value): 
+                storage_level = key.getStorageLevel
+                if storage_level == (False, True, False, True):
+                    print "found RDD in memory"
+                    rdd = key
+                    break
+                else:
+                    print "found RDD that was evicted"
         # no RDD in memory can handle query, so we need to load in new one
         if rdd == "N/A":
             print "getting new rdd"
@@ -98,8 +103,6 @@ def proprietary_algo():
             rdd = rdd.persist(StorageLevel.MEMORY_ONLY)
             # put new RDD in proper map
             rdd_to_cols_map[rdd] = extract_columns_from_query(rdd_query)
-            # remove any evicted RDD's from proper map
-
         # do RDD ops needed
         if query not in complex_to_rdd_ops:
             print "Tried to get rdd_ops for invalid complex query: ", query
