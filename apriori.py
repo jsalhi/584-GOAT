@@ -1,139 +1,118 @@
-"""
-Description     : Simple Python implementation of the Apriori Algorithm
-
-Usage:
-    $python apriori.py -f DATASET.csv -s minSupport  -c minConfidence
-
-    $python apriori.py -f DATASET.csv -s 0.15 -c 0.6
-"""
-
 import sys
-
 from itertools import chain, combinations
 from collections import defaultdict
 from optparse import OptionParser
 
+#Returns items t
+#itemsets = set of all items
+#transactions = list of all sets of transactions
+#itemsetFreqs = frequency of each itemset in transaction list
+#
+def get_supported_items(itemsets, transactions, minSup, itemsetFreqs):
+        minSupSet = set()
+        nTransactions = len(transactions)
+        theseFreaks = defaultdict(int)
 
-def subsets(arr):
-    """ Returns non empty subsets of arr"""
-    return chain(*[combinations(arr, i + 1) for i, a in enumerate(arr)])
+        for itemset in itemsets:
+                for transaction in transactions:
+                        if itemset.issubset(transaction):
+                                itemsetFreqs[itemset] += 1
+                                theseFreaks[itemset] += 1
 
+        for itemset, freq in theseFreaks.items():
+                if float(freq)/nTransactions >= minSup:
+                        minSupSet.add(itemset)
 
-def returnItemsWithMinSupport(itemSet, transactionList, minSupport, freqSet):
-        """calculates the support for items in the itemSet and returns a subset
-       of the itemSet each of whose elements satisfies the minimum support"""
-        _itemSet = set()
-        localSet = defaultdict(int)
+        return minSupSet
 
-        for item in itemSet:
-                for transaction in transactionList:
-                        if item.issubset(transaction):
-                                freqSet[item] += 1
-                                localSet[item] += 1
-
-        for item, count in localSet.items():
-                support = float(count)/len(transactionList)
-
-                if support >= minSupport:
-                        _itemSet.add(item)
-
-        return _itemSet
-
-
-def joinSet(itemSet, length):
-        """Join a set with itself and returns the n-element itemsets"""
-        return set([i.union(j) for i in itemSet for j in itemSet if len(i.union(j)) == length])
+#Return all k-element itemsets that are a subset of items
+#
+def get_k_subset(items, k):
+        return set([i.union(j) for i in items for j in items if len(i.union(j)) == k])
 
 
-def getItemSetTransactionList(data_iterator):
-    transactionList = list()
+def get_items_and_transactions(lineGen):
+    transactionList = []
     itemSet = set()
-    for record in data_iterator:
-        transaction = frozenset(record)
+    for line in lineGen:
+        transaction = frozenset(line)
         transactionList.append(transaction)
         for item in transaction:
-            itemSet.add(frozenset([item]))              # Generate 1-itemSets
+            itemSet.add(frozenset([item])) 
     return itemSet, transactionList
 
+#APRIORI algorithm
+#
+def apriori(itemSet, transactionList, minSupport, minConfidence):
+    itemsetFreqs = defaultdict(int)
 
-def runApriori(data_iter, minSupport, minConfidence):
-    """
-    run the apriori algorithm. data_iter is a record iterator
-    Return both:
-     - items (tuple, support)
-     - rules ((pretuple, posttuple), confidence)
-    """
-    itemSet, transactionList = getItemSetTransactionList(data_iter)
+    #Maps size to itemset, itemsets must have sup > minSup
+    #
+    L = dict()
 
-    freqSet = defaultdict(int)
-    largeSet = dict()
-    # Global dictionary which stores (key=n-itemSets,value=support)
-    # which satisfy minSupport
+    Ci = get_supported_items(itemSet, transactionList, minSupport, itemsetFreqs)
+    Li = Ci
 
-    assocRules = dict()
-    # Dictionary which stores Association Rules
-
-    oneCSet = returnItemsWithMinSupport(itemSet,
-                                        transactionList,
-                                        minSupport,
-                                        freqSet)
-
-    currentLSet = oneCSet
     k = 2
-    while(currentLSet != set([])):
-        largeSet[k-1] = currentLSet
-        currentLSet = joinSet(currentLSet, k)
-        currentCSet = returnItemsWithMinSupport(currentLSet,
-                                                transactionList,
-                                                minSupport,
-                                                freqSet)
-        currentLSet = currentCSet
+    while(Li != set([])):
+        L[k-1] = Li
+        Li = get_k_subset(Li, k)
+
+        Ci = get_supported_items(Li, transactionList, minSupport, itemsetFreqs)
+        Li = Ci
+        
         k = k + 1
 
     def getSupport(item):
-            """local function which Returns the support of an item"""
-            return float(freqSet[item])/len(transactionList)
+            return float(itemsetFreqs[item])/len(transactionList)
 
-    toRetItems = []
-    for key, value in largeSet.items():
-        toRetItems.extend([(tuple(item), getSupport(item))
-                           for item in value])
+    supportedItems = []
+    for key, itemsets in L.items():
+        supportedItems.extend([(tuple(itemset), getSupport(itemset)) for itemset in itemsets])
 
-    toRetRules = []
-    for key, value in largeSet.items()[1:]:
-        for item in value:
-            _subsets = map(frozenset, [x for x in subsets(item)])
-            for element in _subsets:
-                remain = item.difference(element)
-                if len(remain) > 0:
-                    confidence = getSupport(item)/getSupport(element)
+    #Get non-empty subsets of array itemset
+    #
+    def subsets(itemset):
+        return chain(*[combinations(itemset, i + 1) for i in range(len(itemset))])
+
+    associationRules = []
+    for key, k_itemsets in L.items()[1:]:
+        #k_itemsets = k-itemsets in L[key]
+        for itemset in k_itemsets:
+            _subsets = map(frozenset, [x for x in subsets(itemset)])
+            for cause in _subsets:
+                effect = itemset.difference(cause)
+                if len(effect) > 0:
+                    confidence = getSupport(itemset)/getSupport(cause)
                     if confidence >= minConfidence:
-                        toRetRules.append(((tuple(element), tuple(remain)),
-                                           confidence))
-    return toRetItems, toRetRules
+                        associationRules.append(((tuple(cause), tuple(effect)), confidence))
 
+    return supportedItems, associationRules
 
-def printResults(items, rules):
-    """prints the generated itemsets sorted by support and the confidence rules sorted by confidence"""
-    for item, support in sorted(items, key=lambda (item, support): support):
+#Print supported itemsets & association rules
+#
+def print_results(supportedItems, associationRules):
+    #supportedItems: list of tuples of the form ((itemset), support) with min support
+    #
+    for item, support in sorted(supportedItems, key=lambda (item, support): support):
         print "item: %s , %.3f" % (str(item), support)
     print "\n------------------------ RULES:"
-    for rule, confidence in sorted(rules, key=lambda (rule, confidence): confidence):
+    
+    #associationRules: list of tuples in the form (((if), (then)), confidence)
+    #
+    for rule, confidence in sorted(associationRules, key=lambda (rule, confidence): confidence):
         pre, post = rule
         print "Rule: %s ==> %s , %.3f" % (str(pre), str(post), confidence)
 
 
-def dataFromFile(fname):
-        """Function which reads from the file and yields a generator"""
-        file_iter = open(fname, 'rU')
-        for line in file_iter:
-                line = line.strip().rstrip(',')                         # Remove trailing comma
-                record = frozenset(line.split(','))
-                yield record
+def get_transaction_generator(fname):
+        f = open(fname, 'rU')
+        for line in f:
+            line = line.strip().rstrip(',')                         # Remove trailing comma
+            transaction = frozenset(line.split(','))
+            yield transaction
 
-
-if __name__ == "__main__":
-
+def parseOptions():
     optparser = OptionParser()
     optparser.add_option('-f', '--inputFile',
                          dest='input',
@@ -149,21 +128,19 @@ if __name__ == "__main__":
                          help='minimum confidence value',
                          default=0.6,
                          type='float')
+    return optparser.parse_args()
 
-    (options, args) = optparser.parse_args()
-
-    inFile = None
-    if options.input is None:
-            inFile = sys.stdin
-    elif options.input is not None:
-            inFile = dataFromFile(options.input)
+if __name__ == "__main__":
+    (options, args) = parseOptions()    
+    infileGen = None
+    if options.input is not None:
+        infileGen = get_transaction_generator(options.input)
     else:
-            print 'No dataset filename specified, system with exit\n'
-            sys.exit('System will exit')
-
+        print 'No input file specified\n'
+        sys.exit(0)
     minSupport = options.minS
     minConfidence = options.minC
 
-    items, rules = runApriori(inFile, minSupport, minConfidence)
-
-    printResults(items, rules)
+    itemSet, transactionList = get_items_and_transactions(infileGen)
+    supportedItems, associationRules = apriori(itemSet, transactionList, minSupport, minConfidence)
+    print_results(supportedItems, associationRules)
