@@ -7,9 +7,6 @@ Jaleel:
         User2 ran these 7 in this order, etc
 -Write testing workload that we will evaluate performance on
 
-Future work:
--Find cleaner way to see if RDD is persisting in memory?
-
 
 File Locations: 
 (Eg. file_in_git_repo -> path_to_spark_location)
