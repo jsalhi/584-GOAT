@@ -1,7 +1,7 @@
 import string
 import random
 
-n = 10000000
+n = 1000
 first_names = ['Alex', 'Jaleel', 'Gaurav', 'Lynn', 'Barzan', 'Qijun', 'Yitian',
                 'Fangzhou', 'Chien-Wei', 'Ryan', 'Kevin', 'Ahmad', 'Mengmeng',
                 'Dong-Hyeon', 'Preeti', 'Zhizhong', 'Muhammed', 'Sheng',
@@ -19,14 +19,14 @@ companies = ['Microsoft', 'Snapchat', 'Facebook', 'Google', 'AirBNB', 'Twilio',
                 'Intel', 'Twitter', 'Apple', 'Qualcomm', 'Sony', 'Disney',
                 'Symantec', 'Indeed', 'RetailMeNot', 'Etsy', 'Fitbit', 'GoPro',
                 'Tesla', 'Ford', 'Visa', 'Discover', 'SanDisk', 'Palantir']
-favorite_classes = ['EECS583', 'EECS584', 'EECS586', 'EECS595', 'EECS281', 
-                    'EECS280', 'EECS376', 'EECS484', 'EECS485', 'EECS494', 
+favorite_classes = ['EECS583', 'EECS584', 'EECS586', 'EECS595', 'EECS281',
+                    'EECS280', 'EECS376', 'EECS484', 'EECS485', 'EECS494',
                     'EECS482', 'EECS582', 'EECS475', 'EECS575', 'EECS370'
                     'EECS183', 'ECON409', 'CLCIV372', 'ART101', 'HIST101']
 majors = ['CSE', 'EE', 'HIST', 'ART', 'CLCIV', 'BME', 'CS', 'ME', 'IOE', 'NERS',
             'AERO', 'BIO', 'CHEM', 'ECON', 'FIN', 'BUS', 'CHEME', 'MSE', 'N/A']
 tuition_types = ['In State', 'Out Of State', 'International']
-birth_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 
+birth_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept',
                 'Oct', 'Nov', 'Dec']
 genders = ['M', 'F']
 

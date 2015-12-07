@@ -5,7 +5,7 @@ import time
 import sys
 
 #Resource path + datafile
-sparkResPath = "/Users/Alex/Desktop/spark-1.5.1/examples/src/main/resources/"
+sparkResPath = "/home/jsalhi/spark-1.5.1/examples/src/main/resources/"
 dataFile = sparkResPath + "StudentTable-1000.json"
 
 #Necessary garbage for setting up spark contexts
@@ -86,7 +86,7 @@ def proprietary_algo():
         for key, value in rdd_to_cols_map.iteritems():
             # is columns needed a subset of the columns the RDD supports
             # and is this RDD still in memory
-            if columns_needed.issubset(value): 
+            if columns_needed.issubset(value):
                 print key
                 storage_level = key.rdd.getStorageLevel()
                 if storage_level == StorageLevel.MEMORY_ONLY:
