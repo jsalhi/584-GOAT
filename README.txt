@@ -1,6 +1,6 @@
 TODO:
 Alex:
--Hard code everything that is needed for queries
+-Handle MAX and MIN RDD ops
 -Add something to handle if RDD is in memory or not
 
 Jaleel:
