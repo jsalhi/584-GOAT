@@ -6,8 +6,8 @@ import time
 import sys
 
 #Resource path + datafile
-#sparkResPath = "/home/jsalhi/spark-1.5.1/examples/src/main/resources/"
-sparkResPath = "/Users/Alex/Desktop/spark-1.5.1/examples/src/main/resources/"
+sparkResPath = "/home/jsalhi/spark-1.5.1/examples/src/main/resources/"
+#sparkResPath = "/Users/Alex/Desktop/spark-1.5.1/examples/src/main/resources/"
 dataFile = sparkResPath + "StudentTable-1000.json"
 
 #Necessary garbage for setting up spark contexts
@@ -88,14 +88,10 @@ def proprietary_algo():
             if columns_needed.issubset(value):
                 storage_level = key.rdd.getStorageLevel()
                 print "Storage level: ", storage_level
+                #pprint(vars(key.rdd))
                 # Currently not working but we want this to work
-                if storage_level == StorageLevel.MEMORY_ONLY:
+                if key.rdd.is_cached:
                     print "FOUND RDD IN MEMORY\n\n\n"
-                    _rdd = key
-                    break
-                # Currently our hacky fix that I don't want to keep using 
-                elif str(storage_level) == "Memory Deserialized 1x Replicated":
-                    print "FOUND RDD IN MEMORY VIA STRING\n\n\n"
                     _rdd = key
                     break
                 else:
