@@ -1,14 +1,13 @@
 from pyspark import SparkContext
 from pyspark.sql import SQLContext
 from pyspark import StorageLevel
-
 from pprint import pprint
-
 import time
 import sys
 
 #Resource path + datafile
-sparkResPath = "/home/jsalhi/spark-1.5.1/examples/src/main/resources/"
+#sparkResPath = "/home/jsalhi/spark-1.5.1/examples/src/main/resources/"
+sparkResPath = "/Users/Alex/Desktop/spark-1.5.1/examples/src/main/resources/"
 dataFile = sparkResPath + "StudentTable-1000.json"
 
 #Necessary garbage for setting up spark contexts
@@ -87,25 +86,29 @@ def proprietary_algo():
             # is columns needed a subset of the columns the RDD supports
             # and is this RDD still in memory
             if columns_needed.issubset(value):
-                storage_level = key.getStorageLevel()
+                storage_level = key.rdd.getStorageLevel()
+                print "Storage level: ", storage_level
+                # Currently not working but we want this to work
                 if storage_level == StorageLevel.MEMORY_ONLY:
-                    print "found RDD in memory"
-#                    _rdd = key
-#                    break
+                    print "FOUND RDD IN MEMORY\n\n\n"
+                    _rdd = key
+                    break
+                # Currently our hacky fix that I don't want to keep using 
+                elif str(storage_level) == "Memory Deserialized 1x Replicated":
+                    print "FOUND RDD IN MEMORY VIA STRING\n\n\n"
+                    _rdd = key
+                    break
                 else:
-                    print "FOUND RDD THAT WAS EVICTED"
-
-                _rdd = key
-                break
+                    print "FOUND RDD THAT WAS EVICTED\n\n\n"
         # no RDD in memory can handle query, so we need to load in new one
         if _rdd == "N/A":
             print "getting new rdd"
             rdd_query = simple_to_simple_with_apriori_map[simple_query]
-            print rdd_query
+            print "RDD query: ", rdd_query
             _rdd = sqlContext.sql(rdd_query)
-            _rdd = _rdd.rdd.persist(StorageLevel.MEMORY_ONLY)
-            #_rdd = _rdd.rdd.cache()
-
+            _rdd = _rdd.persist(StorageLevel.MEMORY_ONLY)
+            # Make sure RDD is also persisting
+            _rdd.rdd.persist(StorageLevel.MEMORY_ONLY)
             # put new RDD in proper map
             rdd_to_cols_map[_rdd] = extract_columns_from_query(rdd_query)
 
@@ -167,7 +170,6 @@ def do_query_rdd_ops(rdd, query):
     rdd_ops = complex_to_rdd_ops[query]
     for op in rdd_ops:
         # Find out what the op is and do it
-        print "rdd_op"
         if op[0] == "Filter":
             print "Filter found"
             # op[1] = column
@@ -211,8 +213,12 @@ def do_query_rdd_ops(rdd, query):
             print answer_rdd.avg(op[1]).show()
         elif op[0] == "MAX":
             print "MAX found"
+            answer_rdd.max(op[1])
+            print answer_rdd.max(op[1]).show()
         elif op[0] == "MIN":
             print "MIN found"
+            answer_rdd.min(op[1])
+            print answer_rdd.min(op[1]).show()
         elif op[0] == "COUNT":
             print "COUNT found"
             answer_rdd.count()

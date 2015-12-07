@@ -1,14 +1,14 @@
 TODO:
 Alex:
--Handle MAX and MIN RDD ops
--Add something to handle if RDD is in memory or not
 
 Jaleel:
--Add something to handle if RDD is in memory or not
 -Write ~5 files of example query workloads from a unique user
     Eg. User1 ran these 10 queries in this order, 
         User2 ran these 7 in this order, etc
 -Write testing workload that we will evaluate performance on
+
+Future work:
+-Find cleaner way to see if RDD is persisting in memory?
 
 
 File Locations: 
