@@ -21,11 +21,11 @@ data.registerTempTable(tableName)
 
 # key: complex query input (eg. "SELECT AVG(colx) FROM .... WHERE ...")
 # value: simplified version of query (eg. "SELECT cols FROM ..." only)
-complex_to_simple_map = {} # my understanding is this is going to be hard coded
+complex_to_simple_map = {} # hard coded
 # key: complex query input (eg. "SELECT AVG(colx) FROM .... WHERE ...")
 # value: an ordered list of RDD ops that query needs
 #       ordering = list[0] done before list[1] and so on
-complex_to_rdd_ops = {} # will this be hard coded? I think so
+complex_to_rdd_ops = {} # hard coded
 # key: simple query
 # value: list of simple queries it associates with
 apriori_simple_to_simple_map = {} # this will be populated by apriori script
@@ -43,21 +43,16 @@ simple_to_simple_with_apriori_map = {} # this will be managed in preprocessing c
 # Input: none
 # Returns: nothing
 def pre_processing():
-    # next 7 hard coded lines are just to test to make sure algorithm works as should
-    complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable GROUP BY Major"] = "SELECT GPA, Major FROM StudentTable"
-    complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CSE'"] = "SELECT GPA, Major FROM StudentTable"
-    complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CS'"] = "SELECT GPA, Major FROM StudentTable"
-    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable GROUP BY Major"] = [('Group', 'Major'), ('AVG', 'GPA')]
-    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CSE'"] = [('Filter', 'Major', "==", 'CSE'), ('Group', 'N/A'), ('AVG', 'GPA')]
-    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE Major = 'CS'"] = [('Filter', 'Major', "==", 'CS'), ('Group', 'N/A'), ('AVG', 'GPA')]
-    apriori_simple_to_simple_map["SELECT GPA, Major FROM StudentTable"] = ["SELECT GPA, Major, Company FROM StudentTable"]
-#    rdd_to_cols_map['a'] = set(['GPA', 'Major', 'Company'])
-#    rdd_to_cols_map['b'] = set(['GPA', 'Major'])
+    print "Starting pre-processing"
+    init_hard_coded_complex_to_simple_map()
+    init_hard_coded_complex_to_rdd_ops()
+    # This will either be hard_coded or run the apriori script to do this
+    init_apriori_simple_to_simple_map()
     # preprocess the simple_to_simple_with_apriori_map
     for key, value in apriori_simple_to_simple_map.iteritems():
         built_query = build_query_for_rdd(key)
         simple_to_simple_with_apriori_map[key] = built_query
-    print "pre-processed"
+    print "Finished pre-processing"
 
 # Purpose: A proprietary framework to back propogate associated apriori
 #           values to efficiently optimize a query workload using a
@@ -184,20 +179,145 @@ def do_query_rdd_ops(rdd, query):
                 answer_rdd = answer_rdd.filter(answer_rdd[op[1]] > op[3])
             elif op[2] == ">=":
                 answer_rdd = answer_rdd.filter(answer_rdd[op[1]] >= op[3])
-#            print answer_rdd.take(10)
-        elif op[0] == "AVG":
-            print "AVG found"
-            answer_rdd.avg(op[1])
-            print answer_rdd.avg(op[1]).show()
-        elif op[0] == "COUNT":
-            print "COUNT found"
-            answer_rdd.count()
         elif op[0] == "Group":
             print "Group by found"
             if op[1] == 'N/A':
                 answer_rdd = answer_rdd.groupBy()
             else:
-                answer_rdd = answer_rdd.groupBy(op[1])
+                if len(op) == 2:
+                    answer_rdd = answer_rdd.groupBy(op[1])
+                elif len(op) == 3:
+                    answer_rdd = answer_rdd.groupBy(answer_rdd[op[1]], answer_rdd[op[2]])
+        elif op[0] == "Select":
+            print "Select found"
+            if len(op) == 4:
+                answer_rdd.select(answer_rdd[op[1]], answer_rdd[op[2]], answer_rdd[op[3]])
+                print answer_rdd.select(answer_rdd[op[1]], answer_rdd[op[2]], answer_rdd[op[3]]).show()
+            elif len(op) == 3:
+                answer_rdd.select(answer_rdd[op[1]], answer_rdd[op[2]])
+                print answer_rdd.select(answer_rdd[op[1]], answer_rdd[op[2]]).show()
+            elif len(op) == 2:
+                answer_rdd.select(answer_rdd[op[1]])
+                print answer_rdd.select(answer_rdd[op[1]]).show()
+        elif op[0] == "AVG":
+            print "AVG found"
+            answer_rdd.avg(op[1])
+            print answer_rdd.avg(op[1]).show()
+        elif op[0] == "MAX":
+            print "MAX found"
+        elif op[0] == "MIN":
+            print "MIN found"
+        elif op[0] == "COUNT":
+            print "COUNT found"
+            answer_rdd.count()
+            print answer_rdd.count().show()
+
+# Purpose: Initializes complex_to_simple_map with the hard coded info needed
+# Input: nothing
+# Returns: nothing
+def init_hard_coded_complex_to_simple_map():
+    print "Initializing complex_to_simple_map"
+    complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable GROUP BY Major"] = "SELECT GPA, Major FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE'"] = "SELECT StartingSalary, Major FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE' AND GPA > 3.5"] = "SELECT StartingSalary, Major, GPA FROM StudentTable"
+    complex_to_simple_map["SELECT MAX(StartingSalary) FROM StudentTable WHERE Major = 'CSE'"] = "SELECT StartingSalary, Major FROM StudentTable"
+    complex_to_simple_map["SELECT FirstName, LastName, Company FROM StudentTable WHERE Major = 'CSE' AND StartingSalary = 130000"] = "SELECT FirstName, LastName, Company, StartingSalary, Major FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear"] = "SELECT StartingSalary, BirthYear FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth"] = "SELECT StartingSalary, BirthYear, BirthMonth FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay"] = "SELECT StartingSalary, BirthYear, BirthMonth, BirthDay FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear"] = "SELECT GPA, BirthYear FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth"] = "SELECT GPA, BirthYear, BirthMonth FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay"] = "SELECT GPA, BirthYear, BirthMonth, BirthDay FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable GROUP BY Gender"] = "SELECT GPA, Gender FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(StartingSalary) FROM StudentTable GROUP BY Gender"] = "SELECT StartingSalary, Gender FROM StudentTable"
+    complex_to_simple_map["SELECT COUNT(StudentID) FROM StudentTable GROUP BY Gender, Major"] = "SELECT StudentID, Major, Gender FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(StartingSalary) FROM StudentTable GROUP BY Company"] = "SELECT StartingSalary, Company FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(GPA) FROM StudentTable GROUP BY Company"] = "SELECT GPA, Company FROM StudentTable"
+    complex_to_simple_map["SELECT MIN(GPA) FROM StudentTable WHERE Company = 'Google'"] = "SELECT GPA, Company FROM StudentTable"
+    complex_to_simple_map["SELECT COUNT(StudentID) FROM StudentTable GROUP BY Company, Major"] = "SELECT StudentID, Company, Major FROM StudentTable"
+    complex_to_simple_map["SELECT COUNT(StudentID) FROM StudentTable GROUP BY Company, TuitionType"] = "SELECT StudentID, Company, TuitionType FROM StudentTable"
+    complex_to_simple_map["SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Company"] = "SELECT StartingSalary, Company FROM StudentTable"
+    complex_to_simple_map["SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Major"] = "SELECT StartingSalary, Major FROM StudentTable"
+    complex_to_simple_map["SELECT MAX(StartingSalary) FROM StudentTable GROUP BY TuitionType"] = "SELECT StartingSalary, TuitionType FROM StudentTable"
+    complex_to_simple_map["SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Company"] = "SELECT StartingSalary, Company FROM StudentTable"
+    complex_to_simple_map["SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Major"] = "SELECT StartingSalary, Major FROM StudentTable"
+    complex_to_simple_map["SELECT MIN(StartingSalary) FROM StudentTable GROUP BY TuitionType"] = "SELECT StartingSalary, TuitionType FROM StudentTable"
+    complex_to_simple_map["SELECT COUNT(StudentID) FROM StudentTable GROUP BY FavoriteClass"] = "SELECT StudentID, FavoriteClass FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(StartingSalary) FROM StudentTable WHERE FavoriteClass = 'EECS584'"] = "SELECT StartingSalary, FavoriteClass FROM StudentTable"
+    complex_to_simple_map["SELECT FirstName, LastName FROM StudentTable WHERE FavoriteClass = 'EECS584'"] = "SELECT FirstName, LastName, FavoriteClass FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(BirthYear) FROM StudentTable GROUP BY Year"] = "SELECT BirthYear, Year FROM StudentTable"
+    complex_to_simple_map["SELECT AVG(RandInt) FROM StudentTable GROUP BY Year"] = "SELECT RandInt, Year FROM StudentTable"
+    print "Finished initializing complex_to_simple_map"
+
+# Purpose: Initializes complex_to_rdd_ops with the hard coded info needed
+# Input: nothing
+# Returns: nothing
+def init_hard_coded_complex_to_rdd_ops():
+    print "Initializing complex_to_rdd_ops"
+    # Every entry must have a tuple that is ('Group', col_name)
+    # If there is no group by make that tuple ('Group', 'N/A')
+    # EXCEPTION: If it is only SELECT cols with no RDD op then no ('Group', ...) tuple
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable GROUP BY Major"] = [('Group', 'Major'), ('AVG', 'GPA')]
+    complex_to_rdd_ops["SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE'"] = [('Filter', 'Major', "==", 'CSE'), ('Group', 'N/A'), ('AVG', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE' AND GPA > 3.5"] = [('Filter', 'Major', "==", 'CSE'), ('Filter', 'GPA', ">", 3.5), ('Group', 'N/A'), ('AVG', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT MAX(StartingSalary) FROM StudentTable WHERE Major = 'CSE'"] = [('Filter', 'Major', "==", 'CSE'), ('Group', 'N/A'), ('MAX', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT FirstName, LastName, Company FROM StudentTable WHERE Major = 'CSE' AND StartingSalary = 130000"] = [('Filter', 'Major', "==", 'CSE'), ('Filter', 'StartingSalary', "==", 130000), ('Select', 'FirstName', 'LastName', 'Company')]
+    complex_to_rdd_ops["SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear"] = [('Group', 'BirthYear'), ('AVG', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth"] = [('Filter', 'BirthYear', "==", 1994), ('Group', 'BirthMonth'), ('AVG', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay"] = [('Filter', 'BirthYear', "==", 1994), ('Filter', 'BirthMonth', "==", 'Mar'), ('Group', 'BirthDay'), ('AVG', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear"] = [('Group', 'BirthYear'), ('AVG', 'GPA')]
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth"] = [('Filter', 'BirthYear', "==", 1994), ('Group', 'BirthMonth'), ('AVG', 'GPA')]
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay"] = [('Filter', 'BirthYear', "==", 1994), ('Filter', 'BirthMonth', "==", 'Mar'), ('Group', 'BirthDay'), ('AVG', 'GPA')]
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable GROUP BY Gender"] = [('Group', 'Gender'), ('AVG', 'GPA')]
+    complex_to_rdd_ops["SELECT AVG(StartingSalary) FROM StudentTable GROUP BY Gender"] = [('Group', 'Gender'), ('AVG', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT COUNT(StudentID) FROM StudentTable GROUP BY Gender, Major"] = [('Group', 'Gender', 'Major'), ('COUNT', 'StudentID')]
+    complex_to_rdd_ops["SELECT AVG(StartingSalary) FROM StudentTable GROUP BY Company"] = [('Group', 'Company'), ('AVG', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT AVG(GPA) FROM StudentTable GROUP BY Company"] = [('Group', 'Company'), ('AVG', 'GPA')]
+    complex_to_rdd_ops["SELECT MIN(GPA) FROM StudentTable WHERE Company = 'Google'"] = [('Filter', 'Company', "==", 'Google'), ('Group', 'N/A'), ('MIN', 'GPA')]
+    complex_to_rdd_ops["SELECT COUNT(StudentID) FROM StudentTable GROUP BY Company, Major"] = [('Group', 'Company', 'Major'), ('COUNT', 'StudentID')]
+    complex_to_rdd_ops["SELECT COUNT(StudentID) FROM StudentTable GROUP BY Company, TuitionType"] = [('Group', 'Company', 'TuitionType'), ('COUNT', 'StudentID')]
+    complex_to_rdd_ops["SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Company"] = [('Group', 'Company'), ('MAX', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Major"] = [('Group', 'Major'), ('MAX', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT MAX(StartingSalary) FROM StudentTable GROUP BY TuitionType"] = [('Group', 'TuitionType'), ('MAX', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Company"] = [('Group', 'Company'), ('MIN', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Major"] = [('Group', 'Major'), ('MIN', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT MIN(StartingSalary) FROM StudentTable GROUP BY TuitionType"] = [('Group', 'TuitionType'), ('MIN', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT COUNT(StudentID) FROM StudentTable GROUP BY FavoriteClass"] = [('Group', 'FavoriteClass'), ('COUNT', 'StudentID')]
+    complex_to_rdd_ops["SELECT AVG(StartingSalary) FROM StudentTable WHERE FavoriteClass = 'EECS584'"] = [('Filter', 'FavoriteClass', "==", 'EECS584'), ('Group', 'N/A'), ('AVG', 'StartingSalary')]
+    complex_to_rdd_ops["SELECT FirstName, LastName FROM StudentTable WHERE FavoriteClass = 'EECS584'"] = [('Filter', 'FavoriteClass', "==", 'EECS584'), ('Select', 'FirstName', 'LastName')]
+    complex_to_rdd_ops["SELECT AVG(BirthYear) FROM StudentTable GROUP BY Year"] = [('Group', 'Year'), ('AVG', 'BirthYear')]
+    complex_to_rdd_ops["SELECT AVG(RandInt) FROM StudentTable GROUP BY Year"] = [('Group', 'Year'), ('AVG', 'RandInt')]
+    print "Finished initializing complex_to_rdd_ops"
+
+def init_apriori_simple_to_simple_map():
+    print "Initializing apriori_simple_to_simple_map"
+    # These should be populated by apriori part, not hard coded
+    # And it should be a list of queries, not just one (for most cases)
+    apriori_simple_to_simple_map["SELECT GPA, Major FROM StudentTable"] = ["SELECT GPA, Major FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StartingSalary, Major, GPA FROM StudentTable"] = ["SELECT StartingSalary, Major, GPA FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StartingSalary, Major FROM StudentTable"] = ["SELECT StartingSalary, Major FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT FirstName, LastName, Company, StartingSalary, Major FROM StudentTable"] = ["SELECT FirstName, LastName, Company, StartingSalary, Major FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StartingSalary, BirthYear FROM StudentTable"] = ["SELECT StartingSalary, BirthYear FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StartingSalary, BirthYear, BirthMonth FROM StudentTable"] = ["SELECT StartingSalary, BirthYear, BirthMonth FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StartingSalary, BirthYear, BirthMonth, BirthDay FROM StudentTable"] = ["SELECT StartingSalary, BirthYear, BirthMonth, BirthDay FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT GPA, BirthYear FROM StudentTable"] = ["SELECT GPA, BirthYear FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT GPA, BirthYear, BirthMonth FROM StudentTable"] = ["SELECT GPA, BirthYear, BirthMonth FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT GPA, BirthYear, BirthMonth, BirthDay FROM StudentTable"] = ["SELECT GPA, BirthYear, BirthMonth, BirthDay FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT GPA, Gender FROM StudentTable"] = ["SELECT GPA, Gender FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StartingSalary, Gender FROM StudentTable"] = ["SELECT StartingSalary, Gender FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StudentID, Major, Gender FROM StudentTable"] = ["SELECT StudentID, Major, Gender FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StartingSalary, Company FROM StudentTable"] = ["SELECT StartingSalary, Company FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT GPA, Company FROM StudentTable"] = ["SELECT GPA, Company FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StudentID, Company, Major FROM StudentTable"] = ["SELECT StudentID, Company, Major FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StudentID, Company, TuitionType FROM StudentTable"] = ["SELECT StudentID, Company, TuitionType FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StartingSalary, Major FROM StudentTable"] = ["SELECT StartingSalary, Major FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StartingSalary, TuitionType FROM StudentTable"] = ["SELECT StartingSalary, TuitionType FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StudentID, FavoriteClass FROM StudentTable"] = ["SELECT StudentID, FavoriteClass FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT StartingSalary, FavoriteClass FROM StudentTable"] = ["SELECT StartingSalary, FavoriteClass FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT FirstName, LastName, FavoriteClass FROM StudentTable"] = ["SELECT FirstName, LastName, FavoriteClass FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT BirthYear, Year FROM StudentTable"] = ["SELECT BirthYear, Year FROM StudentTable"]
+    apriori_simple_to_simple_map["SELECT RandInt, Year FROM StudentTable"] = ["SELECT RandInt, Year FROM StudentTable"]
+    print "Finished initializing apriori_simple_to_simple_map"
 
 if __name__ == "__main__":
     pre_processing()
