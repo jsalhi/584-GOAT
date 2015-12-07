@@ -1,6 +1,9 @@
 from pyspark import SparkContext
 from pyspark.sql import SQLContext
 from pyspark import StorageLevel
+
+from pprint import pprint
+
 import time
 import sys
 
@@ -79,35 +82,38 @@ def proprietary_algo():
         columns_needed = extract_columns_from_query(simple_query)
         # iterate through RDDs in memory and see if any of them can support
         # the columns that are needed for this query
-        rdd = "N/A"
+        _rdd = "N/A"
         for key, value in rdd_to_cols_map.iteritems():
             # is columns needed a subset of the columns the RDD supports
             # and is this RDD still in memory
             if columns_needed.issubset(value):
-                print key
-                storage_level = key.rdd.getStorageLevel()
+                storage_level = key.getStorageLevel()
                 if storage_level == StorageLevel.MEMORY_ONLY:
                     print "found RDD in memory"
-#                    rdd = key
+#                    _rdd = key
 #                    break
                 else:
                     print "FOUND RDD THAT WAS EVICTED"
-                rdd = key
+
+                _rdd = key
                 break
         # no RDD in memory can handle query, so we need to load in new one
-        if rdd == "N/A":
+        if _rdd == "N/A":
             print "getting new rdd"
             rdd_query = simple_to_simple_with_apriori_map[simple_query]
             print rdd_query
-            rdd = sqlContext.sql(rdd_query)
-            rdd = rdd.persist(StorageLevel.MEMORY_ONLY)
+            _rdd = sqlContext.sql(rdd_query)
+            _rdd = _rdd.rdd.persist(StorageLevel.MEMORY_ONLY)
+            #_rdd = _rdd.rdd.cache()
+
             # put new RDD in proper map
-            rdd_to_cols_map[rdd] = extract_columns_from_query(rdd_query)
+            rdd_to_cols_map[_rdd] = extract_columns_from_query(rdd_query)
+
         # do RDD ops needed
         if query not in complex_to_rdd_ops:
             print "Tried to get rdd_ops for invalid complex query: ", query
             sys.exit()
-        do_query_rdd_ops(rdd, query)
+        do_query_rdd_ops(_rdd, query)
 
 # Purpose: extract all the columns needed for a certain query
 # Input: a simplified version of a query that contains only "SELECT cols FROM x"
