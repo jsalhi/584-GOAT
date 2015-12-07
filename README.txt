@@ -5,10 +5,7 @@ Jaleel:
 -Write ~5 files of example query workloads from a unique user
     Eg. User1 ran these 10 queries in this order, 
         User2 ran these 7 in this order, etc
--Write testing workload that we will evaluate performance on
-
-Future work:
--Find cleaner way to see if RDD is persisting in memory?
+-Write testing workload that we will evaluate performance
 
 
 File Locations: 
