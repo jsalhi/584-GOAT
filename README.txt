@@ -7,7 +7,6 @@ Jaleel:
         User2 ran these 7 in this order, etc
 -Write testing workload that we will evaluate performance on
 
-
 File Locations: 
 (Eg. file_in_git_repo -> path_to_spark_location)
 -algorithm.py -> /spark-1.5.1/EECS584/algorithm.py
