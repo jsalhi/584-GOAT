@@ -1,6 +1,5 @@
 TODO:
 Alex:
--Write a file of what I want apriori_out to have in it
 -Write testing workload that we will evaluate performance on
 
 Jaleel:
