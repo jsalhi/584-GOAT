@@ -1,13 +1,16 @@
 TODO:
 Alex:
--Write backprop algorithm
--Evaluate benchmark metrics for JIT pipelining in TransMeta encoder setting
+-Write a file of what I want apriori_out to have in it
+-Write testing workload that we will evaluate performance on
 
 Jaleel:
 -Write ~5 files of example query workloads from a unique user
     Eg. User1 ran these 10 queries in this order, 
         User2 ran these 7 in this order, etc
 -Write testing workload that we will evaluate performance on
+-Tinker with apriori script and input files to see how 
+    close you can get to what I'm looking for
+
 
 Usage:
 -To create output file for apriori trained data
@@ -24,3 +27,9 @@ File Locations:
 -InputFile.txt -> /spark-1.5.1/EECS584/InputFile.txt
 -NaiveTime.py -> /spark-1.5.1/EECS584/NaiveTime.py
 -NormalTime.py -> /spark-1.5.1/EECS584/NormalTime.py
+
+Initial results on InputFile.txt and 10m dataset:
+Algo: 6m 20s (380s)
+Naive: 9m 45s (585s)
+Normal: 9m 8s (548s)
+Algo offered 35% speedup on naive and 31% on normal

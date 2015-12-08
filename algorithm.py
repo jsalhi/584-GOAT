@@ -339,11 +339,10 @@ def init_apriori_simple_to_simple_map():
                 key = complex_to_simple_map[associations[i+1]]
                 # Remove older entry
                 apriori_simple_to_simple_map[key] = []
-                for j in range(1, int(associations[i])):
+                for j in range(1, int(associations[i])+1):
                     value = complex_to_simple_map[associations[i+j]]
                     apriori_simple_to_simple_map[key].append(value)
     print "Finished initializing apriori_simple_to_simple_map"
-#    pprint(apriori_simple_to_simple_map)
 
 if __name__ == "__main__":
     pre_processing()
