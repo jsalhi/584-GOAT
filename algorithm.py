@@ -90,11 +90,11 @@ def proprietary_algo():
                 print "Storage level: ", storage_level
                 # Currently not working but we want this to work
                 if key.rdd.is_cached:
-                    print "FOUND RDD IN MEMORY\n\n\n"
+                    print "FOUND RDD IN MEMORY"
                     _rdd = key
                     break
                 else:
-                    print "FOUND RDD THAT WAS EVICTED\n\n\n"
+                    print "FOUND RDD THAT WAS EVICTED"
         # no RDD in memory can handle query, so we need to load in new one
         if _rdd == "N/A":
             print "getting new rdd"
@@ -324,7 +324,26 @@ def init_apriori_simple_to_simple_map():
     apriori_simple_to_simple_map["SELECT FirstName, LastName, FavoriteClass FROM StudentTable"] = ["SELECT FirstName, LastName, FavoriteClass FROM StudentTable"]
     apriori_simple_to_simple_map["SELECT BirthYear, Year FROM StudentTable"] = ["SELECT BirthYear, Year FROM StudentTable"]
     apriori_simple_to_simple_map["SELECT RandInt, Year FROM StudentTable"] = ["SELECT RandInt, Year FROM StudentTable"]
+    file_opened = True
+    try:
+        apriori_in = open("apriori_out.txt")
+    except IOError:
+        file_opened = False
+        print "Could not open apriori file"
+    if file_opened:
+        print "Apriori File Opened"
+        associations = apriori_in.readlines()
+        associations = [line.strip('\n') for line in associations]
+        for i in range(0,len(associations)):
+            if associations[i].isdigit():
+                key = complex_to_simple_map[associations[i+1]]
+                # Remove older entry
+                apriori_simple_to_simple_map[key] = []
+                for j in range(1, int(associations[i])):
+                    value = complex_to_simple_map[associations[i+j]]
+                    apriori_simple_to_simple_map[key].append(value)
     print "Finished initializing apriori_simple_to_simple_map"
+#    pprint(apriori_simple_to_simple_map)
 
 if __name__ == "__main__":
     pre_processing()
