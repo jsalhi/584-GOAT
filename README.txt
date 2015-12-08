@@ -17,6 +17,7 @@ File Locations:
 (Eg. file_in_git_repo -> path_to_spark_location)
 -algorithm.py -> /spark-1.5.1/EECS584/algorithm.py
 -AllQueries.txt -> /spark-1.5.1/EECS584/AllQueries.txt
+-apriori_out.txt -> /spark-1.5.1/EECS584/apriori_out.txt
 -apriori.py -> /spark-1.5.1/EECS584/apriori.py
 -cacheBenchmark.py -> /spark-1.5.1/EECS584/cacheBenchmark.py
 -GenRandStudentTable.py -> /spark-1.5.1/examples/src/main/resources/GenRandStudentTable.py
