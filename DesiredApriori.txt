@@ -1,0 +1,87 @@
+-------------------------------------------------------------------------------
+Most important ones to have:
+4
+SELECT AVG(GPA) FROM StudentTable GROUP BY Major
+SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE'
+SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE' AND GPA > 3.5
+SELECT MAX(StartingSalary) FROM StudentTable WHERE Major = 'CSE'
+3
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+3
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+3
+SELECT AVG(GPA) FROM StudentTable GROUP BY Gender
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY Gender
+SELECT COUNT(StudentID) FROM StudentTable GROUP BY Gender, Major
+3
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY Company
+SELECT AVG(GPA) FROM StudentTable GROUP BY Company
+SELECT MIN(GPA) FROM StudentTable WHERE Company = 'Google'
+2
+SELECT COUNT(StudentID) FROM StudentTable GROUP BY Company, Major
+SELECT COUNT(StudentID) FROM StudentTable GROUP BY Company, TuitionType
+3
+SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Company
+SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Major
+SELECT MAX(StartingSalary) FROM StudentTable GROUP BY TuitionType
+3
+SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Company
+SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Major
+SELECT MIN(StartingSalary) FROM StudentTable GROUP BY TuitionType
+3
+SELECT COUNT(StudentID) FROM StudentTable GROUP BY FavoriteClass
+SELECT AVG(StartingSalary) FROM StudentTable WHERE FavoriteClass = 'EECS584'
+SELECT FirstName, LastName FROM StudentTable WHERE FavoriteClass = 'EECS584'
+-------------------------------------------------------------------------------
+Other good ones to have (basically just subsets of other ones):
+3
+SELECT AVG(GPA) FROM StudentTable GROUP BY Major
+SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE'
+SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE' AND GPA > 3.5
+3
+SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE'
+SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE' AND GPA > 3.5
+SELECT MAX(StartingSalary) FROM StudentTable WHERE Major = 'CSE'
+2
+SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE' AND GPA > 3.5
+SELECT MAX(StartingSalary) FROM StudentTable WHERE Major = 'CSE'
+2
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+2
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+2
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY Gender
+SELECT COUNT(StudentID) FROM StudentTable GROUP BY Gender, Major
+2
+SELECT AVG(GPA) FROM StudentTable GROUP BY Gender
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY Gender
+2
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY Company
+SELECT AVG(GPA) FROM StudentTable GROUP BY Company
+2
+SELECT AVG(GPA) FROM StudentTable GROUP BY Company
+SELECT MIN(GPA) FROM StudentTable WHERE Company = 'Google'
+2
+SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Major
+SELECT MAX(StartingSalary) FROM StudentTable GROUP BY TuitionType
+2
+SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Company
+SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Major
+2
+SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Major
+SELECT MIN(StartingSalary) FROM StudentTable GROUP BY TuitionType
+2
+SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Company
+SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Major
+2
+SELECT AVG(StartingSalary) FROM StudentTable WHERE FavoriteClass = 'EECS584'
+SELECT FirstName, LastName FROM StudentTable WHERE FavoriteClass = 'EECS584'
+2
+SELECT COUNT(StudentID) FROM StudentTable GROUP BY FavoriteClass
+SELECT AVG(StartingSalary) FROM StudentTable WHERE FavoriteClass = 'EECS584'
