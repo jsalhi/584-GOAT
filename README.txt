@@ -1,11 +1,17 @@
 TODO:
 Alex:
+-Write backprop algorithm
+-Evaluate benchmark metrics for JIT pipelining in TransMeta encoder setting
 
 Jaleel:
 -Write ~5 files of example query workloads from a unique user
     Eg. User1 ran these 10 queries in this order, 
         User2 ran these 7 in this order, etc
 -Write testing workload that we will evaluate performance on
+
+Usage:
+-To create output file for apriori trained data
+    python apriori.py -l INPUTFILE_1 INPUTFILE_2 ... -w WINDOW_SIZE(4) -s MIN_SUPPORT(0.2) -c MIN_CONFIDENCE(0.5)
 
 File Locations: 
 (Eg. file_in_git_repo -> path_to_spark_location)
