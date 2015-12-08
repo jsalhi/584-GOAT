@@ -14,7 +14,7 @@ Jaleel:
 
 Usage:
 -To create output file for apriori trained data
-    python apriori.py -l INPUTFILE_1 INPUTFILE_2 ... -w WINDOW_SIZE(4) -s MIN_SUPPORT(0.2) -c MIN_CONFIDENCE(0.5)
+    python apriori.py -l INPUTFILE_1 INPUTFILE_2 ... -w WINDOW_SIZE(4) -s MIN_SUPPORT(0.1) -c MIN_CONFIDENCE(0.9)
 
 File Locations: 
 (Eg. file_in_git_repo -> path_to_spark_location)
