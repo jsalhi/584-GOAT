@@ -2,6 +2,54 @@ SELECT MAX(StartingSalary) FROM StudentTable GROUP BY TuitionType
 SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
 SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
 SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
 SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Company
 SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Major
 SELECT MIN(StartingSalary) FROM StudentTable GROUP BY TuitionType
@@ -186,3 +234,360 @@ SELECT MIN(StartingSalary) FROM StudentTable GROUP BY TuitionType
 SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Company
 SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Major
 SELECT MIN(StartingSalary) FROM StudentTable GROUP BY TuitionType
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
