@@ -209,4 +209,4 @@ if __name__ == "__main__":
     supported_items, association_rules = apriori(item_set, transaction_list, min_support, min_confidence)
 
     write_results("../apriori_out.txt", association_rules)
-    print_results(supported_items, association_rules)
+    #print_results(supported_items, association_rules)

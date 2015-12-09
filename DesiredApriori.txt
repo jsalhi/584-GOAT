@@ -14,7 +14,7 @@ SELECT GPA, BirthYear, BirthMonth FROM StudentTable
 SELECT GPA, BirthYear, BirthMonth, BirthDay FROM StudentTable
 3
 SELECT GPA, Gender FROM StudentTable
-SELECT GPA, Gender, StartingSalary FROM StudentTable
+SELECT Gender, StartingSalary FROM StudentTable
 SELECT StudentID, Gender, Major FROM StudentTable
 2
 SELECT StartingSalary, Company FROM StudentTable
