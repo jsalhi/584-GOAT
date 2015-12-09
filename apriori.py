@@ -104,22 +104,25 @@ def get_transaction_generator(fname):
 #files = list of files to read in from to generate transactions
 #
 def get_transaction_gen_from_files(filenames, window_size):
+    import algorithm
+    algorithm.init_hard_coded_complex_to_simple_map()
+
     for filename in filenames:
-        nLines = 0
-        curTransaction = []
+        n_lines = 0
+        cur_transaction = []
         with open(filename, 'rU') as f:
             for line in f:
-                line = line.strip().rstrip(',')
-                curTransaction.append(line)
+                complex_query = line.strip().rstrip(',')
+                cur_transaction.append(algorithm.complex_to_simple_map[complex_query])
 
-                nLines += 1
-                if nLines >= window_size:
-                    yield frozenset(curTransaction)
-                    _ = curTransaction.pop(0)
+                n_lines += 1
+                if n_lines >= window_size:
+                    yield frozenset(cur_transaction)
+                    _ = cur_transaction.pop(0)
 
-        while len(curTransaction) >= 2:
-            yield frozenset(curTransaction)
-            _ = curTransaction.pop(0)
+        while len(cur_transaction) >= 2:
+            yield frozenset(cur_transaction)
+            _ = cur_transaction.pop(0)
 
 
 def parse_options():
