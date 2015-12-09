@@ -6,8 +6,8 @@ import time
 import sys
 
 #Resource path + datafile
-sparkResPath = "/home/jsalhi/spark-1.5.1/examples/src/main/resources/"
-#sparkResPath = "/Users/Alex/Desktop/spark-1.5.1/examples/src/main/resources/"
+#sparkResPath = "/home/jsalhi/spark-1.5.1/examples/src/main/resources/"
+sparkResPath = "/Users/Alex/Desktop/spark-1.5.1/examples/src/main/resources/"
 dataFile = sparkResPath + "StudentTable-1000.json"
 
 #Necessary garbage for setting up spark contexts
@@ -336,11 +336,11 @@ def init_apriori_simple_to_simple_map():
         associations = [line.strip('\n') for line in associations]
         for i in range(0,len(associations)):
             if associations[i].isdigit():
-                key = complex_to_simple_map[associations[i+1]]
+                key = associations[i+1]
                 # Remove older entry
                 apriori_simple_to_simple_map[key] = []
                 for j in range(1, int(associations[i])+1):
-                    value = complex_to_simple_map[associations[i+j]]
+                    value = associations[i+j]
                     apriori_simple_to_simple_map[key].append(value)
     print "Finished initializing apriori_simple_to_simple_map"
 
