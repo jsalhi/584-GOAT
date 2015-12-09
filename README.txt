@@ -34,6 +34,6 @@ Naive: 9m 45s (585s)
 Normal: 9m 8s (548s)
 Algo offered 35% speedup on naive and 31% on normal
 
-apriori.py command on primary_benchmark:
-    python ../apriori.py -l primary_benchmark.aa primary_benchmark.ab primary_benchmark.ac primary_benchmark.ad primary_benchmark.ae primary_benchmark.af primary_benchmark.ag primary_benchmark.ah -w 4 -s 0.1 -c 0.4
+apriori.py command on input files:
+    python ../apriori.py -l input1.txt input2.txt input3.txt input4.txt input5.txt input6.txt input7.txt input8.txt -w 4 -s 0.1 -c 0.4
 

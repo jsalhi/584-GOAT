@@ -208,5 +208,5 @@ if __name__ == "__main__":
     item_set, transaction_list = get_items_and_transactions(infile_gen)
     supported_items, association_rules = apriori(item_set, transaction_list, min_support, min_confidence)
 
-    write_results("apriori_out.txt", association_rules)
+    write_results("../apriori_out.txt", association_rules)
     print_results(supported_items, association_rules)
