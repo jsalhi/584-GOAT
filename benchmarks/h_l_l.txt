@@ -1,0 +1,9 @@
+SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Company
+SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Major
+SELECT MAX(StartingSalary) FROM StudentTable GROUP BY TuitionType
+SELECT AVG(GPA) FROM StudentTable GROUP BY Gender
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY Gender
+SELECT COUNT(StudentID) FROM StudentTable GROUP BY Gender, Major
+SELECT COUNT(StudentID) FROM StudentTable GROUP BY FavoriteClass
+SELECT AVG(StartingSalary) FROM StudentTable WHERE FavoriteClass = 'EECS584'
+SELECT FirstName, LastName FROM StudentTable WHERE FavoriteClass = 'EECS584'
