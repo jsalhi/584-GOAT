@@ -5,6 +5,7 @@ how_many_numbers = 10
 min_range = 0
 max_range = 29
 
+random.seed(9)
 rand_indices = [random.randint(min_range, max_range) for _ in range(how_many_numbers)]
 
 if len(sys.argv) < 3:

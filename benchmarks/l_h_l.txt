@@ -1,0 +1,9 @@
+SELECT AVG(BirthYear) FROM StudentTable GROUP BY Year
+SELECT AVG(RandInt) FROM StudentTable GROUP BY Year
+SELECT AVG(GPA) FROM StudentTable GROUP BY Major
+SELECT AVG(BirthYear) FROM StudentTable GROUP BY Year
+SELECT AVG(RandInt) FROM StudentTable GROUP BY Year
+SELECT AVG(GPA) FROM StudentTable GROUP BY Major
+SELECT AVG(BirthYear) FROM StudentTable GROUP BY Year
+SELECT AVG(RandInt) FROM StudentTable GROUP BY Year
+SELECT AVG(GPA) FROM StudentTable GROUP BY Major
