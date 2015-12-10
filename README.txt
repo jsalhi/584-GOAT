@@ -1,6 +1,6 @@
 Our Usage
 1)Go to EECS584/input_files file and run command:
-    python ../apriori.py -l input1.txt input2.txt input3.txt input4.txt input5.txt input6.txt -w 4 -s 0.1 -c 0.4
+    python ../apriori.py -l input1.txt input2.txt input3.txt input4.txt input5.txt input6.txt -w 4 -s 0.1 -c 0.5
 2)Go back to EECS584 head directory and run:
     ./run_tests.sh benchmarks/benchmark_name.txt > results_out.txt 
     (printing to output is to make it more readable)
