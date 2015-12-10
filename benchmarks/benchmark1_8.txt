@@ -1,8 +1,0 @@
-SELECT AVG(GPA) FROM StudentTable GROUP BY Major
-SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE'
-SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE' AND GPA > 3.5
-SELECT MAX(StartingSalary) FROM StudentTable WHERE Major = 'CSE'
-SELECT FirstName, LastName, Company FROM StudentTable WHERE Major = 'CSE' AND StartingSalary = 130000
-SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
-SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
-SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay

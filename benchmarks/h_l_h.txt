@@ -1,0 +1,9 @@
+SELECT AVG(StartingSalary) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(StartingSalary) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 GROUP BY BirthDay
+SELECT COUNT(StudentID) FROM StudentTable GROUP BY FavoriteClass
+SELECT AVG(StartingSalary) FROM StudentTable WHERE FavoriteClass = 'EECS584'
+SELECT FirstName, LastName FROM StudentTable WHERE FavoriteClass = 'EECS584'
+SELECT AVG(GPA) FROM StudentTable GROUP BY BirthYear
+SELECT AVG(GPA) FROM StudentTable WHERE BirthYear = 1994 GROUP BY BirthMonth
+SELECT AVG(GPA) FROM StudentTable WHERE BirthMonth = 'Mar' AND BirthYear = 1994 

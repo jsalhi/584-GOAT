@@ -1,6 +1,0 @@
-SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Company
-SELECT MAX(StartingSalary) FROM StudentTable GROUP BY Major
-SELECT MAX(StartingSalary) FROM StudentTable GROUP BY TuitionType
-SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Company
-SELECT MIN(StartingSalary) FROM StudentTable GROUP BY Major
-SELECT MIN(StartingSalary) FROM StudentTable GROUP BY TuitionType

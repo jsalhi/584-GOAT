@@ -1,5 +1,0 @@
-SELECT COUNT(StudentID) FROM StudentTable GROUP BY FavoriteClass
-SELECT AVG(StartingSalary) FROM StudentTable WHERE FavoriteClass = 'EECS584'
-SELECT FirstName, LastName FROM StudentTable WHERE FavoriteClass = 'EECS584'
-SELECT AVG(BirthYear) FROM StudentTable GROUP BY Year
-SELECT AVG(RandInt) FROM StudentTable GROUP BY Year
