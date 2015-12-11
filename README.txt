@@ -1,18 +1,19 @@
 Our Usage
 1)Put all our files submitted in the proper directory as listed in
-    the file locations section of this README
-1)Go to /spark-1.5.1/examples/src/main/resources/ and run the command
+    the file locations section of this README 
+    (you will need to create the EECS584 directory)
+2)Go to /spark-1.5.1/examples/src/main/resources/ and run the command
         python GenRandStudentTable.py
     In this script n is the number of tuples to be created in the 
     StudentTable, we tested with a dataset of 10 million tuples.
     Be warned creating a dataset of 10 million tuples will take around 
     5-10 minutes to run and will be around 3GB when complete.
-2)Go to /spark-1.5.1/EECS584/ and edit algorithm.py. Change line 9 in
+3)Go to /spark-1.5.1/EECS584/ and edit algorithm.py. Change line 9 in
     this script to go to the proper path where you have stored the StudentTable
-3)Go to /spark-1.5.1/EECS584/input_files file and run command:
+4)Go to /spark-1.5.1/EECS584/input_files file and run command:
         python ../apriori.py -l input1.txt input2.txt input3.txt input4.txt input5.txt input6.txt -w 4 -s 0.1 -c 0.4
     This command is responsible for creating the trained Apriori output
-4)Go back to EECS584 head directory and run:
+5)Go back to EECS584 head directory and run:
         ./run_tests.sh
     This command will run all of our benchmarks and can take anywhere from
     2 to 8 hours to complete, depending on machine.

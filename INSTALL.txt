@@ -2,3 +2,20 @@ This is a tutorial on how to install Spark-1.5.1 for
 SmartSQL to be built on top of. Once Spark-1.5.1 is
 installed go to the README.txt to learn how to setup
 SmartSQL and use it! 
+1) Go to https://spark.apache.org/downloads.html
+    and download Spark release 1.5.1. Select package
+    type Source Code and either download type will work.
+    Then click download spark-1.5.1.tgz.
+2) If you chose Apache Mirro download, click the 
+    suggested download that they give you
+3) Move the .tgz to wherever you want to store Spark
+    and unzip the file
+4) Open up a terminal window in the Spark-1.5.1 high
+    level directory and run the following command:
+        build/mvn -Pyarn -Phadoop-2.4 -Dhadoop.version=2.4.0 -DskipTests clean package
+    If there are any errors the following site
+    will be better at helping you than I could be
+    at predicting that error and helping it.
+    https://spark.apache.org/docs/latest/building-spark.html
+5) Now that you have Spark up and running go over to the
+    README to figure out how to configure SmartSQL!!!
