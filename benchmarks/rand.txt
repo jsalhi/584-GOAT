@@ -1,9 +1,0 @@
-SELECT COUNT(StudentID) FROM StudentTable GROUP BY Gender, Major
-SELECT AVG(GPA) FROM StudentTable GROUP BY Gender
-SELECT FirstName, LastName, Company FROM StudentTable WHERE Major = 'CSE' AND StartingSalary = 130000
-SELECT COUNT(StudentID) FROM StudentTable GROUP BY FavoriteClass
-SELECT AVG(GPA) FROM StudentTable GROUP BY Major
-SELECT AVG(GPA) FROM StudentTable GROUP BY Company
-SELECT AVG(StartingSalary) FROM StudentTable WHERE FavoriteClass = 'EECS584'
-SELECT AVG(StartingSalary) FROM StudentTable WHERE Major = 'CSE' AND GPA > 3.5
-SELECT MIN(GPA) FROM StudentTable WHERE Company = 'Google'

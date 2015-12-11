@@ -1,0 +1,4 @@
+This is a tutorial on how to install Spark-1.5.1 for 
+SmartSQL to be built on top of. Once Spark-1.5.1 is
+installed go to the README.txt to learn how to setup
+SmartSQL and use it! 
