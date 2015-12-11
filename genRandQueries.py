@@ -1,7 +1,7 @@
 import random
 import sys
 
-how_many_numbers = 10
+how_many_numbers = 9
 min_range = 0
 max_range = 29
 
