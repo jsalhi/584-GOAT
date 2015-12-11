@@ -1,3 +1,7 @@
+SmartSQL: Speculative Query Preetching in Spark SQL
+Alex Lancaster (alancast)
+Jaleel Salhi (jsalhi)
+-----------------------------------------------------------
 Our Usage
 1)Put all our files submitted in the proper directory as listed in
     the file locations section of this README 
