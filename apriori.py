@@ -32,6 +32,9 @@ def get_k_subset(items, k):
         return set([i.union(j) for i in items for j in items if len(i.union(j)) == k])
 
 
+#Based on a generator expression that yields frozensets of transactions,
+#return the corresponding itemset and list of transactions
+#
 def get_items_and_transactions(lineGen):
     transactionList = []
     itemSet = set()
@@ -50,7 +53,6 @@ def apriori(itemSet, transactionList, minSupport, minConfidence):
     #Maps size to itemset, itemsets must have sup > minSup
     #
     L = dict()
-
     Ci = get_supported_items(itemSet, transactionList, minSupport, itemsetFreqs)
     Li = Ci
 
@@ -66,7 +68,6 @@ def apriori(itemSet, transactionList, minSupport, minConfidence):
 
     def getSupport(item):
             return float(itemsetFreqs[item])/len(transactionList)
-
     supportedItems = []
     for key, itemsets in L.items():
         supportedItems.extend([(tuple(itemset), getSupport(itemset)) for itemset in itemsets])
@@ -79,25 +80,23 @@ def apriori(itemSet, transactionList, minSupport, minConfidence):
     associationRules = []
     for key, k_itemsets in L.items()[1:]:
         #k_itemsets = k-itemsets in L[key]
+        #
         for itemset in k_itemsets:
+            #Subsets of elements in k_itemset
+            #
             _subsets = map(frozenset, [x for x in subsets(itemset)])
             for cause in _subsets:
+                #Remove antecedent from association rule
+                #
                 effect = itemset.difference(cause)
+                #Retrieve non-trivial associations
+                #
                 if len(effect) > 0:
                     confidence = getSupport(itemset)/getSupport(cause)
                     if confidence >= minConfidence:
                         associationRules.append(((tuple(cause), tuple(effect)), confidence))
 
     return supportedItems, associationRules
-
-#Returns a generator that outputs a frozenset() representing each transaction
-#
-def get_transaction_generator(fname):
-        f = open(fname, 'rU')
-        for line in f:
-            line = line.strip().rstrip(',')                         # Remove trailing comma
-            transaction = frozenset(line.split(','))
-            yield transaction
 
 #Returns a generator that outputs a frozenset() representing each transaction
 #
@@ -127,11 +126,6 @@ def get_transaction_gen_from_files(filenames, window_size):
 
 def parse_options():
     optparser = argparse.ArgumentParser()
-    #optparser = OptionParser()
-    optparser.add_argument('-f', '--inputFile',
-                         dest='input',
-                         help='Single filename for APRIORI',
-                         default=None)
     optparser.add_argument('-l', '--fileList',
                         dest='fileList',
                         help='Filenames containing APRIORI training data',
@@ -171,33 +165,13 @@ def write_results(outfile_name, associationRules):
             for associated_element in set(effect):
                 f.write(str(associated_element) + "\n")
 
-
-#Print supported itemsets & association rules
-#
-def print_results(supportedItems, associationRules):
-        #supportedItems: list of tuples of the form ((itemset), support) with min support
-        #
-        for item, support in sorted(supportedItems, key=lambda (item, support): support):
-            print "item: %s , %.3f" % (str(item), support)
-
-        print "\n------------------------ RULES:"
-        #associationRules: list of tuples in the form (((if), (then)), confidence)
-        #
-        for rule, confidence in sorted(associationRules, key=lambda (rule, confidence): confidence):
-            pre, post = rule
-            print "Rule: %s ==> %s , %.3f" % (str(pre), str(post), confidence)
-
-
 if __name__ == "__main__":
     options = parse_options()
     infile_gen = None
-    if options.input is None and options.fileList is None:
+    if options.fileList is None:
         print "No input file(s) specified. Exiting"
         sys.exit(0)
 
-    if options.input is not None:
-        #infile_gen = get_transaction_generator(options.input)
-        infile_gen = get_transaction_gen_from_files(["EXAMPLE.txt"], 4)
     if options.fileList is not None:
         print options.fileList
         infile_gen = get_transaction_gen_from_files(options.fileList, options.windowSize)
@@ -209,4 +183,3 @@ if __name__ == "__main__":
     supported_items, association_rules = apriori(item_set, transaction_list, min_support, min_confidence)
 
     write_results("../apriori_out.txt", association_rules)
-    #print_results(supported_items, association_rules)
