@@ -1,0 +1,126 @@
+[Stage 0:>                                                         (0 + 1) / 84][Stage 0:>                                                         (1 + 1) / 84][Stage 0:=>                                                        (2 + 1) / 84][Stage 0:==>                                                       (3 + 1) / 84][Stage 0:==>                                                       (4 + 1) / 84][Stage 0:===>                                                      (5 + 1) / 84][Stage 0:====>                                                     (6 + 1) / 84][Stage 0:====>                                                     (7 + 1) / 84][Stage 0:=====>                                                    (8 + 1) / 84][Stage 0:======>                                                   (9 + 1) / 84][Stage 0:======>                                                  (10 + 1) / 84][Stage 0:=======>                                                 (11 + 1) / 84][Stage 0:========>                                                (12 + 1) / 84][Stage 0:========>                                                (13 + 1) / 84][Stage 0:=========>                                               (14 + 1) / 84][Stage 0:==========>                                              (15 + 1) / 84][Stage 0:==========>                                              (16 + 1) / 84][Stage 0:===========>                                             (17 + 1) / 84][Stage 0:============>                                            (18 + 1) / 84][Stage 0:============>                                            (19 + 1) / 84][Stage 0:=============>                                           (20 + 1) / 84][Stage 0:==============>                                          (21 + 1) / 84][Stage 0:==============>                                          (22 + 1) / 84][Stage 0:===============>                                         (23 + 1) / 84][Stage 0:================>                                        (24 + 1) / 84][Stage 0:================>                                        (25 + 1) / 84][Stage 0:=================>                                       (26 + 1) / 84][Stage 0:==================>                                      (27 + 1) / 84][Stage 0:===================>                                     (28 + 1) / 84][Stage 0:===================>                                     (29 + 1) / 84][Stage 0:====================>                                    (30 + 1) / 84][Stage 0:=====================>                                   (31 + 1) / 84][Stage 0:=====================>                                   (32 + 1) / 84][Stage 0:======================>                                  (33 + 1) / 84][Stage 0:=======================>                                 (34 + 1) / 84][Stage 0:=======================>                                 (35 + 1) / 84][Stage 0:========================>                                (36 + 1) / 84][Stage 0:=========================>                               (37 + 1) / 84][Stage 0:=========================>                               (38 + 1) / 84][Stage 0:==========================>                              (39 + 1) / 84][Stage 0:===========================>                             (40 + 1) / 84][Stage 0:===========================>                             (41 + 1) / 84][Stage 0:============================>                            (42 + 1) / 84][Stage 0:=============================>                           (43 + 1) / 84][Stage 0:=============================>                           (44 + 1) / 84][Stage 0:==============================>                          (45 + 1) / 84][Stage 0:===============================>                         (46 + 1) / 84][Stage 0:===============================>                         (47 + 1) / 84][Stage 0:================================>                        (48 + 1) / 84][Stage 0:=================================>                       (49 + 1) / 84][Stage 0:=================================>                       (50 + 1) / 84][Stage 0:==================================>                      (51 + 1) / 84][Stage 0:===================================>                     (52 + 1) / 84][Stage 0:===================================>                     (53 + 1) / 84][Stage 0:====================================>                    (54 + 1) / 84][Stage 0:=====================================>                   (55 + 1) / 84][Stage 0:======================================>                  (56 + 1) / 84][Stage 0:======================================>                  (57 + 1) / 84][Stage 0:=======================================>                 (58 + 1) / 84][Stage 0:========================================>                (59 + 1) / 84][Stage 0:========================================>                (60 + 1) / 84][Stage 0:=========================================>               (61 + 1) / 84][Stage 0:==========================================>              (62 + 1) / 84][Stage 0:==========================================>              (63 + 1) / 84][Stage 0:===========================================>             (64 + 1) / 84][Stage 0:============================================>            (65 + 1) / 84][Stage 0:============================================>            (66 + 1) / 84][Stage 0:=============================================>           (67 + 1) / 84][Stage 0:==============================================>          (68 + 1) / 84][Stage 0:==============================================>          (69 + 1) / 84][Stage 0:===============================================>         (70 + 1) / 84][Stage 0:================================================>        (71 + 1) / 84][Stage 0:================================================>        (72 + 1) / 84][Stage 0:=================================================>       (73 + 1) / 84][Stage 0:==================================================>      (74 + 1) / 84][Stage 0:==================================================>      (75 + 1) / 84][Stage 0:===================================================>     (76 + 1) / 84][Stage 0:====================================================>    (77 + 1) / 84][Stage 0:====================================================>    (78 + 1) / 84][Stage 0:=====================================================>   (79 + 1) / 84][Stage 0:======================================================>  (80 + 1) / 84][Stage 0:======================================================>  (81 + 1) / 84][Stage 0:=======================================================> (82 + 1) / 84][Stage 0:========================================================>(83 + 1) / 84]                                                                                [Stage 2:>                                                         (0 + 1) / 84][Stage 2:>                                                         (1 + 1) / 84][Stage 2:=>                                                        (2 + 1) / 84][Stage 2:==>                                                       (3 + 1) / 84][Stage 2:==>                                                       (4 + 1) / 84][Stage 2:===>                                                      (5 + 1) / 84][Stage 2:====>                                                     (6 + 1) / 84][Stage 2:====>                                                     (7 + 1) / 84][Stage 2:=====>                                                    (8 + 1) / 84][Stage 2:======>                                                   (9 + 1) / 84][Stage 2:======>                                                  (10 + 1) / 84][Stage 2:=======>                                                 (11 + 1) / 84][Stage 2:========>                                                (12 + 1) / 84][Stage 2:========>                                                (13 + 1) / 84][Stage 2:=========>                                               (14 + 1) / 84][Stage 2:==========>                                              (15 + 1) / 84][Stage 2:==========>                                              (16 + 1) / 84][Stage 2:===========>                                             (17 + 1) / 84][Stage 2:============>                                            (18 + 1) / 84][Stage 2:============>                                            (19 + 1) / 84][Stage 2:=============>                                           (20 + 1) / 84][Stage 2:==============>                                          (21 + 1) / 84][Stage 2:==============>                                          (22 + 1) / 84][Stage 2:===============>                                         (23 + 1) / 84][Stage 2:================>                                        (24 + 1) / 84][Stage 2:================>                                        (25 + 1) / 84][Stage 2:=================>                                       (26 + 1) / 84][Stage 2:==================>                                      (27 + 1) / 84][Stage 2:===================>                                     (28 + 1) / 84][Stage 2:===================>                                     (29 + 1) / 84][Stage 2:====================>                                    (30 + 1) / 84][Stage 2:=====================>                                   (31 + 1) / 84][Stage 2:=====================>                                   (32 + 1) / 84][Stage 2:======================>                                  (33 + 1) / 84][Stage 2:=======================>                                 (34 + 1) / 84][Stage 2:=======================>                                 (35 + 1) / 84][Stage 2:========================>                                (36 + 1) / 84][Stage 2:=========================>                               (37 + 1) / 84][Stage 2:=========================>                               (38 + 1) / 84][Stage 2:==========================>                              (39 + 1) / 84][Stage 2:===========================>                             (40 + 1) / 84][Stage 2:===========================>                             (41 + 1) / 84][Stage 2:============================>                            (42 + 1) / 84][Stage 2:=============================>                           (43 + 1) / 84][Stage 2:=============================>                           (44 + 1) / 84][Stage 2:==============================>                          (45 + 1) / 84][Stage 2:===============================>                         (46 + 1) / 84][Stage 2:===============================>                         (47 + 1) / 84][Stage 2:================================>                        (48 + 1) / 84][Stage 2:=================================>                       (49 + 1) / 84][Stage 2:=================================>                       (50 + 1) / 84][Stage 2:==================================>                      (51 + 1) / 84][Stage 2:===================================>                     (52 + 1) / 84][Stage 2:===================================>                     (53 + 1) / 84][Stage 2:====================================>                    (54 + 1) / 84][Stage 2:=====================================>                   (55 + 1) / 84][Stage 2:======================================>                  (56 + 1) / 84][Stage 2:======================================>                  (57 + 1) / 84][Stage 2:=======================================>                 (58 + 1) / 84][Stage 2:========================================>                (59 + 1) / 84][Stage 2:========================================>                (60 + 1) / 84][Stage 2:=========================================>               (61 + 1) / 84][Stage 2:==========================================>              (62 + 1) / 84][Stage 2:==========================================>              (63 + 1) / 84][Stage 2:===========================================>             (64 + 1) / 84][Stage 2:============================================>            (65 + 1) / 84][Stage 2:============================================>            (66 + 1) / 84][Stage 2:=============================================>           (67 + 1) / 84][Stage 2:==============================================>          (68 + 1) / 84][Stage 2:==============================================>          (69 + 1) / 84][Stage 2:===============================================>         (70 + 1) / 84][Stage 2:================================================>        (71 + 1) / 84][Stage 2:================================================>        (72 + 1) / 84][Stage 2:=================================================>       (73 + 1) / 84][Stage 2:==================================================>      (74 + 1) / 84][Stage 2:==================================================>      (75 + 1) / 84][Stage 2:===================================================>     (76 + 1) / 84][Stage 2:====================================================>    (77 + 1) / 84][Stage 2:====================================================>    (78 + 1) / 84][Stage 2:=====================================================>   (79 + 1) / 84][Stage 2:======================================================>  (80 + 1) / 84][Stage 2:======================================================>  (81 + 1) / 84][Stage 2:=======================================================> (82 + 1) / 84][Stage 2:========================================================>(83 + 1) / 84]                                                                                Traceback (most recent call last):
+  File "algorithm.py", line 349, in <module>
+    proprietary_algo()
+  File "algorithm.py", line 114, in proprietary_algo
+    do_query_rdd_ops(_rdd, query)
+  File "algorithm.py", line 220, in do_query_rdd_ops
+    print answer_rdd.count().show()
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/dataframe.py", line 256, in show
+    print(self._jdf.showString(n, truncate))
+  File "/home/jsalhi/spark-1.5.1/python/lib/py4j-0.8.2.1-src.zip/py4j/java_gateway.py", line 536, in __call__
+  File "/home/jsalhi/spark-1.5.1/python/lib/py4j-0.8.2.1-src.zip/py4j/java_gateway.py", line 364, in send_command
+  File "/home/jsalhi/spark-1.5.1/python/lib/py4j-0.8.2.1-src.zip/py4j/java_gateway.py", line 473, in send_command
+  File "/usr/lib/python2.7/socket.py", line 434, in readline
+    data = recv(1)
+KeyboardInterrupt
+
+real	1m23.852s
+user	0m0.300s
+sys	0m0.487s
+TIMING TEST DONE FOR PROPRIETARY ALGO
+Traceback (most recent call last):
+  File "NaiveTime.py", line 1, in <module>
+    from pyspark import SparkContext
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/__init__.py", line 52, in <module>
+    from pyspark.sql import SQLContext, HiveContext, SchemaRDD, Row
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/__init__.py", line 63, in <module>
+    from pyspark.sql.context import SQLContext, HiveContext
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/context.py", line 34, in <module>
+    from pyspark.sql.dataframe import DataFrame
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/dataframe.py", line 42, in <module>
+    class DataFrame(object):
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/dataframe.py", line 371, in DataFrame
+    @since(1.3)
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/__init__.py", line 51, in since
+    import re
+KeyboardInterrupt
+
+real	0m0.107s
+user	0m0.123s
+sys	0m0.280s
+TIMING TEST DONE FOR NAIVE ALGO
+15/12/10 19:00:30 ERROR TaskSchedulerImpl: Exception in statusUpdate
+java.util.concurrent.RejectedExecutionException: Task org.apache.spark.scheduler.TaskResultGetter$$anon$2@3b28890 rejected from java.util.concurrent.ThreadPoolExecutor@2220400f[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 205]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2047)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:823)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1369)
+	at org.apache.spark.scheduler.TaskResultGetter.enqueueSuccessfulTask(TaskResultGetter.scala:49)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.liftedTree2$1(TaskSchedulerImpl.scala:347)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.statusUpdate(TaskSchedulerImpl.scala:330)
+	at org.apache.spark.scheduler.local.LocalEndpoint$$anonfun$receive$1.applyOrElse(LocalBackend.scala:65)
+	at org.apache.spark.rpc.akka.AkkaRpcEnv.org$apache$spark$rpc$akka$AkkaRpcEnv$$processMessage(AkkaRpcEnv.scala:177)
+	at org.apache.spark.rpc.akka.AkkaRpcEnv$$anonfun$actorRef$lzycompute$1$1$$anon$1$$anonfun$receiveWithLogging$1$$anonfun$applyOrElse$4.apply$mcV$sp(AkkaRpcEnv.scala:126)
+	at org.apache.spark.rpc.akka.AkkaRpcEnv.org$apache$spark$rpc$akka$AkkaRpcEnv$$safelyCall(AkkaRpcEnv.scala:197)
+	at org.apache.spark.rpc.akka.AkkaRpcEnv$$anonfun$actorRef$lzycompute$1$1$$anon$1$$anonfun$receiveWithLogging$1.applyOrElse(AkkaRpcEnv.scala:125)
+	at scala.runtime.AbstractPartialFunction$mcVL$sp.apply$mcVL$sp(AbstractPartialFunction.scala:33)
+	at scala.runtime.AbstractPartialFunction$mcVL$sp.apply(AbstractPartialFunction.scala:33)
+	at scala.runtime.AbstractPartialFunction$mcVL$sp.apply(AbstractPartialFunction.scala:25)
+	at org.apache.spark.util.ActorLogReceive$$anon$1.apply(ActorLogReceive.scala:59)
+	at org.apache.spark.util.ActorLogReceive$$anon$1.apply(ActorLogReceive.scala:42)
+	at scala.PartialFunction$class.applyOrElse(PartialFunction.scala:118)
+	at org.apache.spark.util.ActorLogReceive$$anon$1.applyOrElse(ActorLogReceive.scala:42)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:467)
+	at org.apache.spark.rpc.akka.AkkaRpcEnv$$anonfun$actorRef$lzycompute$1$1$$anon$1.aroundReceive(AkkaRpcEnv.scala:92)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:238)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+15/12/10 19:00:30 ERROR AkkaRpcEnv: Ignore error: Task org.apache.spark.executor.Executor$TaskRunner@f2ae934 rejected from java.util.concurrent.ThreadPoolExecutor@17b6e5e2[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 206]
+java.util.concurrent.RejectedExecutionException: Task org.apache.spark.executor.Executor$TaskRunner@f2ae934 rejected from java.util.concurrent.ThreadPoolExecutor@17b6e5e2[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 206]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2047)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:823)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1369)
+	at org.apache.spark.executor.Executor.launchTask(Executor.scala:127)
+	at org.apache.spark.scheduler.local.LocalEndpoint$$anonfun$reviveOffers$1.apply(LocalBackend.scala:85)
+	at org.apache.spark.scheduler.local.LocalEndpoint$$anonfun$reviveOffers$1.apply(LocalBackend.scala:83)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at org.apache.spark.scheduler.local.LocalEndpoint.reviveOffers(LocalBackend.scala:83)
+	at org.apache.spark.scheduler.local.LocalEndpoint$$anonfun$receive$1.applyOrElse(LocalBackend.scala:68)
+	at org.apache.spark.rpc.akka.AkkaRpcEnv.org$apache$spark$rpc$akka$AkkaRpcEnv$$processMessage(AkkaRpcEnv.scala:177)
+	at org.apache.spark.rpc.akka.AkkaRpcEnv$$anonfun$actorRef$lzycompute$1$1$$anon$1$$anonfun$receiveWithLogging$1$$anonfun$applyOrElse$4.apply$mcV$sp(AkkaRpcEnv.scala:126)
+	at org.apache.spark.rpc.akka.AkkaRpcEnv.org$apache$spark$rpc$akka$AkkaRpcEnv$$safelyCall(AkkaRpcEnv.scala:197)
+	at org.apache.spark.rpc.akka.AkkaRpcEnv$$anonfun$actorRef$lzycompute$1$1$$anon$1$$anonfun$receiveWithLogging$1.applyOrElse(AkkaRpcEnv.scala:125)
+	at scala.runtime.AbstractPartialFunction$mcVL$sp.apply$mcVL$sp(AbstractPartialFunction.scala:33)
+	at scala.runtime.AbstractPartialFunction$mcVL$sp.apply(AbstractPartialFunction.scala:33)
+	at scala.runtime.AbstractPartialFunction$mcVL$sp.apply(AbstractPartialFunction.scala:25)
+	at org.apache.spark.util.ActorLogReceive$$anon$1.apply(ActorLogReceive.scala:59)
+	at org.apache.spark.util.ActorLogReceive$$anon$1.apply(ActorLogReceive.scala:42)
+	at scala.PartialFunction$class.applyOrElse(PartialFunction.scala:118)
+	at org.apache.spark.util.ActorLogReceive$$anon$1.applyOrElse(ActorLogReceive.scala:42)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:467)
+	at org.apache.spark.rpc.akka.AkkaRpcEnv$$anonfun$actorRef$lzycompute$1$1$$anon$1.aroundReceive(AkkaRpcEnv.scala:92)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:238)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Traceback (most recent call last):
+  File "NormalTime.py", line 1, in <module>
+    from pyspark import SparkContext
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/__init__.py", line 52, in <module>
+    from pyspark.sql import SQLContext, HiveContext, SchemaRDD, Row
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/__init__.py", line 63, in <module>
+    from pyspark.sql.context import SQLContext, HiveContext
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/context.py", line 40, in <module>
+    import pandas
+  File "/usr/lib/python2.7/site-packages/pandas/__init__.py", line 42, in <module>
+    import pandas.core.config_init
+  File "/usr/lib/python2.7/site-packages/pandas/core/config_init.py", line 13, in <module>
+    import pandas.core.config as cf
+  File "/usr/lib/python2.7/site-packages/pandas/core/config.py", line 96, in <module>
+    def _get_option(pat, silent=False):
+KeyboardInterrupt
+
+real	0m0.146s
+user	0m0.167s
+sys	0m0.490s
+TIMING TEST DONE FOR NORMAL ALGO

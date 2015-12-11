@@ -1,0 +1,115 @@
+Traceback (most recent call last):
+  File "algorithm.py", line 1, in <module>
+    from pyspark import SparkContext
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/__init__.py", line 52, in <module>
+    from pyspark.sql import SQLContext, HiveContext, SchemaRDD, Row
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/__init__.py", line 63, in <module>
+    from pyspark.sql.context import SQLContext, HiveContext
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/context.py", line 40, in <module>
+    import pandas
+  File "/usr/lib/python2.7/site-packages/pandas/__init__.py", line 7, in <module>
+    from pandas import hashtable, tslib, lib
+  File "pandas/tslib.pyx", line 60, in init pandas.tslib (pandas/tslib.c:102797)
+  File "/usr/lib/python2.7/site-packages/pytz/__init__.py", line 29, in <module>
+    from pkg_resources import resource_stream
+  File "/usr/lib/python2.7/site-packages/pkg_resources/__init__.py", line 3095, in <module>
+    @_call_aside
+  File "/usr/lib/python2.7/site-packages/pkg_resources/__init__.py", line 3081, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/pkg_resources/__init__.py", line 3108, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/lib/python2.7/site-packages/pkg_resources/__init__.py", line 649, in _build_master
+    ws = cls()
+  File "/usr/lib/python2.7/site-packages/pkg_resources/__init__.py", line 642, in __init__
+    self.add_entry(entry)
+  File "/usr/lib/python2.7/site-packages/pkg_resources/__init__.py", line 698, in add_entry
+    for dist in find_distributions(entry, True):
+  File "/usr/lib/python2.7/site-packages/pkg_resources/__init__.py", line 2137, in find_on_path
+    path_item, entry, metadata, precedence=DEVELOP_DIST
+  File "/usr/lib/python2.7/site-packages/pkg_resources/__init__.py", line 2499, in from_location
+    py_version=py_version, platform=platform, **kw
+  File "/usr/lib/python2.7/site-packages/pkg_resources/__init__.py", line 2478, in __init__
+    self._version = safe_version(version)
+KeyboardInterrupt
+
+real	0m0.135s
+user	0m0.177s
+sys	0m0.477s
+TIMING TEST DONE FOR PROPRIETARY ALGO
+Traceback (most recent call last):
+  File "NaiveTime.py", line 1, in <module>
+    from pyspark import SparkContext
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/__init__.py", line 52, in <module>
+    from pyspark.sql import SQLContext, HiveContext, SchemaRDD, Row
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/__init__.py", line 63, in <module>
+    from pyspark.sql.context import SQLContext, HiveContext
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/context.py", line 40, in <module>
+    import pandas
+  File "/usr/lib/python2.7/site-packages/pandas/__init__.py", line 44, in <module>
+    from pandas.core.api import *
+  File "/usr/lib/python2.7/site-packages/pandas/core/api.py", line 9, in <module>
+    from pandas.core.groupby import Grouper
+  File "/usr/lib/python2.7/site-packages/pandas/core/groupby.py", line 16, in <module>
+    from pandas.core.frame import DataFrame
+  File "/usr/lib/python2.7/site-packages/pandas/core/frame.py", line 44, in <module>
+    from pandas.computation.eval import eval as _eval
+  File "/usr/lib/python2.7/site-packages/pandas/computation/eval.py", line 8, in <module>
+    from pandas.computation.expr import Expr, _parsers, tokenize_string
+  File "/usr/lib/python2.7/site-packages/pandas/computation/expr.py", line 4, in <module>
+    import ast
+  File "/usr/lib/python2.7/ast.py", line 28, in <module>
+    from _ast import *
+KeyboardInterrupt
+
+real	0m0.215s
+user	0m0.223s
+sys	0m0.497s
+TIMING TEST DONE FOR NAIVE ALGO
+Traceback (most recent call last):
+  File "NormalTime.py", line 1, in <module>
+    from pyspark import SparkContext
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/__init__.py", line 52, in <module>
+    from pyspark.sql import SQLContext, HiveContext, SchemaRDD, Row
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/__init__.py", line 63, in <module>
+    from pyspark.sql.context import SQLContext, HiveContext
+  File "/home/jsalhi/spark-1.5.1/python/pyspark/sql/context.py", line 40, in <module>
+    import pandas
+  File "/usr/lib/python2.7/site-packages/pandas/__init__.py", line 7, in <module>
+    from pandas import hashtable, tslib, lib
+  File "pandas/tslib.pyx", line 60, in init pandas.tslib (pandas/tslib.c:102797)
+  File "/usr/lib/python2.7/site-packages/pytz/__init__.py", line 29, in <module>
+    from pkg_resources import resource_stream
+  File "/usr/lib/python2.7/site-packages/pkg_resources/__init__.py", line 95, in <module>
+    import packaging.specifiers
+  File "/usr/lib/python2.7/site-packages/packaging/specifiers.py", line 285, in <module>
+    class Specifier(_IndividualSpecifier):
+  File "/usr/lib/python2.7/site-packages/packaging/specifiers.py", line 384, in Specifier
+    re.VERBOSE | re.IGNORECASE,
+  File "/usr/lib/python2.7/re.py", line 194, in compile
+    return _compile(pattern, flags)
+  File "/usr/lib/python2.7/re.py", line 249, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 576, in compile
+    code = _code(p, flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 561, in _code
+    _compile(code, p.data, flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 151, in _compile
+    _compile(code, av[1], flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 192, in _compile
+    _compile(code, av, flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 151, in _compile
+    _compile(code, av[1], flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 140, in _compile
+    _compile(code, av[2], flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 151, in _compile
+    _compile(code, av[1], flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 151, in _compile
+    _compile(code, av[1], flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 190, in _compile
+    skip = _len(code); emit(0)
+KeyboardInterrupt
+
+real	0m0.128s
+user	0m0.163s
+sys	0m0.483s
+TIMING TEST DONE FOR NORMAL ALGO

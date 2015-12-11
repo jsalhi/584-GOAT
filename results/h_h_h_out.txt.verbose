@@ -1,0 +1,16 @@
+Reading Table
+Starting pre-processing
+Initializing complex_to_simple_map
+Finished initializing complex_to_simple_map
+Initializing complex_to_rdd_ops
+Finished initializing complex_to_rdd_ops
+Initializing apriori_simple_to_simple_map
+Apriori File Opened
+Finished initializing apriori_simple_to_simple_map
+Finished pre-processing
+getting new rdd
+RDD query:  SELECT FavoriteClass, StudentID, StartingSalary, FirstName, LastName FROM StudentTable
+~~~~~~~~~~~~~~~ RDD ~~~~~~~~~~~~~~~
+Doing RDD ops for query:  SELECT COUNT(StudentID) FROM StudentTable GROUP BY FavoriteClass
+Group by found
+COUNT found

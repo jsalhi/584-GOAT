@@ -6,8 +6,8 @@ import time
 import sys
 
 #Resource path + datafile
-#sparkResPath = "/home/jsalhi/spark-1.5.1/examples/src/main/resources/"
-sparkResPath = "/Users/Alex/Desktop/spark-1.5.1/examples/src/main/resources/"
+sparkResPath = "/home/jsalhi/spark-1.5.1/examples/src/main/resources/"
+#sparkResPath = "/Users/Alex/Desktop/spark-1.5.1/examples/src/main/resources/"
 dataFile = sparkResPath + "StudentTable-10000000.json"
 
 #Necessary garbage for setting up spark contexts
