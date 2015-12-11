@@ -20,52 +20,6 @@ def write_results(outfile_name, associationRules):
             for associated_element in set(effect):
                 f.write(str(associated_element) + "\n")
 
-#APRIORI algorithm
-#
-def apriori(itemSet, transactionList, minSupport, minConfidence):
-    itemset_frequencies = defaultdict(int)
-    L = {}
-
-    #Maps size to itemset, itemsets must have sup > minSup
-    #
-    Li = get_supported_items(itemSet, transactionList, minSupport, itemset_frequencies)
-    Ci = []
-    j = 2
-    while(not (Li == set([]))):
-        L[j-1] = Li
-        Li = get_k_subset(Li, j)
-        Ci = get_supported_items(Li, transactionList, minSupport, itemset_frequencies)
-        Li = Ci
-        j += 1
-
-    def getSupport(item):
-            return float(itemset_frequencies[item])/len(transactionList)
-
-    #Association rules!
-    #
-    supported_items = []
-    associationRules = []
-    ksets = L.items()
-    ksets = ksets[1:]
-    for key in L:
-        supported_items.extend([(tuple(itemset), getSupport(itemset)) for itemset in L[key]])
-    for k in ksets:
-        k_itemsets = k[1]
-        for itemset in k_itemsets:
-            #Subsets of elements in k_itemset
-            #
-            for cause in map(frozenset, [x for x in chain(*[combinations(itemset, i + 1) for i in range(len(itemset))])]):
-                #Remove antecedent from association rule
-                #
-                effect = itemset.difference(cause)
-                #Retrieve non-trivial associations
-                #
-                if len(effect) > 0:
-                    confidence = getSupport(itemset)/getSupport(cause)
-                    if confidence >= minConfidence:
-                        associationRules.append(((tuple(cause), tuple(effect)), confidence))
-
-    return supported_items, associationRules
 
 #Returns items t
 #itemsets = set of all items
@@ -130,6 +84,52 @@ def get_transaction_gen_from_files(filenames, window_size):
             yield frozenset(cur_transaction)
             _ = cur_transaction.pop(0)
 
+#APRIORI algorithm
+#
+def apriori(itemSet, transactionList, minSupport, minConfidence):
+    itemset_frequencies = defaultdict(int)
+    L = {}
+
+    #Maps size to itemset, itemsets must have sup > minSup
+    #
+    Li = get_supported_items(itemSet, transactionList, minSupport, itemset_frequencies)
+    Ci = []
+    j = 2
+    while(not (Li == set([]))):
+        L[j-1] = Li
+        Li = get_k_subset(Li, j)
+        Ci = get_supported_items(Li, transactionList, minSupport, itemset_frequencies)
+        Li = Ci
+        j += 1
+
+    def getSupport(item):
+            return float(itemset_frequencies[item])/len(transactionList)
+
+    #Association rules!
+    #
+    supported_items = []
+    associationRules = []
+    ksets = L.items()
+    ksets = ksets[1:]
+    for key in L:
+        supported_items.extend([(tuple(itemset), getSupport(itemset)) for itemset in L[key]])
+    for k in ksets:
+        k_itemsets = k[1]
+        for itemset in k_itemsets:
+            #Subsets of elements in k_itemset
+            #
+            for cause in map(frozenset, [x for x in chain(*[combinations(itemset, i + 1) for i in range(len(itemset))])]):
+                #Remove antecedent from association rule
+                #
+                effect = itemset.difference(cause)
+                #Retrieve non-trivial associations
+                #
+                if len(effect) > 0:
+                    confidence = getSupport(itemset)/getSupport(cause)
+                    if confidence >= minConfidence:
+                        associationRules.append(((tuple(cause), tuple(effect)), confidence))
+
+    return supported_items, associationRules
 
 def parse_options():
     optparser = argparse.ArgumentParser()
